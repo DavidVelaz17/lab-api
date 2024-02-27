@@ -18,17 +18,17 @@ public class CustomerForm implements Serializable {
     @Size (max = 3,message = "{right.length}")
     private int age;
 
-    @ApiObjectField(name= "phone_number", description = "Customer's phone number")
+    @ApiObjectField(name= "phoneNumber", description = "Customer's phone number")
     @Size (max = 11,message = "{right.length}")
-    private String phone_number;
+    private String phoneNumber;
 
     @ApiObjectField(name= "address", description = "Customer's address")
     @Size (max = 200,message = "{right.length}")
     private String address;
 
-    @ApiObjectField(name= "date of birth", description = "Customer's date of birth")
+    @ApiObjectField(name= "dateOfBirth", description = "Customer's date of birth")
     @Size (max = 50,message = "{right.length}")
-    private LocalDate date_of_birth;
+    private LocalDate dateOfBirth;
 
     @ApiObjectField(name= "status", description = "Customer's status")
     @Size (max = 2,message = "{right.length}")

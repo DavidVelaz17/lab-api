@@ -20,14 +20,14 @@ public class CustomerDTO {
     @ApiObjectField(name = "age", description = "Customer's ID")
     private int age;
 
-    @ApiObjectField(name = "phone_number", description = "Customer's ID")
-    private String phone_number;
+    @ApiObjectField(name = "phoneNumber", description = "Customer's ID")
+    private String phoneNumber;
 
     @ApiObjectField(name = "address", description = "Customer's ID")
     private String address;
 
-    @ApiObjectField(name = "date_of_birth", description = "Customer's ID")
-    private LocalDate date_of_birth;
+    @ApiObjectField(name = "dateOfBirth", description = "Customer's ID")
+    private LocalDate dateOfBirth;
 
     @ApiObjectField(name = "status", description = "Customer's ID")
     private Status status;
@@ -37,8 +37,8 @@ public class CustomerDTO {
                 .idCustomer(customer.getIdCustomer())
                 .name(customer.getName())
                 .age(customer.getAge())
-                .date_of_birth(customer.getDateOfBirth())
-                .phone_number(customer.getPhoneNumber())
+                .dateOfBirth(customer.getDateOfBirth())
+                .phoneNumber(customer.getPhoneNumber())
                 .address(customer.getAddress())
                 .status(customer.getStatus())
                 .build();

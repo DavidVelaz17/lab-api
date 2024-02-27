@@ -25,13 +25,13 @@ public class Customer {
     @Column(name = "age", nullable = false)
     private int age;
 
-    @Column(name = "phone_number", nullable = false)
+    @Column(name = "phoneNumber", nullable = false)
     private String phoneNumber;
 
     @Column(name = "address", nullable = false)
     private String address;
 
-    @Column(name = "date_of_birth", nullable = false)
+    @Column(name = "dateOfBirth", nullable = false)
     private LocalDate dateOfBirth;
 
     @Column(name = "status", nullable = false)
@@ -41,18 +41,18 @@ public class Customer {
     public Customer(final CustomerForm form){
         this.name = form.getName();
         this.age=form.getAge();
-        this.phoneNumber=form.getPhone_number();
+        this.phoneNumber=form.getPhoneNumber();
         this.address=form.getAddress();
-        this.dateOfBirth=form.getDate_of_birth();
+        this.dateOfBirth=form.getDateOfBirth();
         this.status=form.getStatus();
     }
 
     public void updateCustomer(final CustomerForm form){
         this.name= form.getName();
         this.age=form.getAge();
-        this.phoneNumber=form.getPhone_number();
+        this.phoneNumber=form.getPhoneNumber();
         this.address=form.getAddress();
-        this.dateOfBirth=form.getDate_of_birth();
+        this.dateOfBirth=form.getDateOfBirth();
         this.status=form.getStatus();
     }
 }
