@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "/lab/customer")
@@ -15,13 +16,21 @@ import org.springframework.web.bind.annotation.*;
 public class CostumerController {
     private final CustomerService customerService;
 
+
+    @GetMapping("")
+    public ResponseEntity<List<CustomerDTO>> getAllCustomers() {
+        final List<CustomerDTO> customersList = customerService.getAllCustomer();
+        return ResponseEntity.ok().body(customersList);
+    }
+
+
     @GetMapping("/{customerId}")
     public ResponseEntity<CustomerDTO> getCustomerId(@PathVariable("customerId") final int customerId) throws Exception {
         final CustomerDTO customerDTOInfo = customerService.getCustomerById(customerId);
         return ResponseEntity.ok().body(customerDTOInfo);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<CustomerDTO> saveCustomer(@RequestBody @Valid final CustomerForm customerInfo) {
         final CustomerDTO saveNewCustumer = customerService.createCustomer(customerInfo);
         return ResponseEntity.status(HttpStatus.CREATED).body(saveNewCustumer);

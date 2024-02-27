@@ -20,7 +20,7 @@ public class CustomerForm implements Serializable {
 
     @ApiObjectField(name= "phone_number", description = "Customer's phone number")
     @Size (max = 11,message = "{right.length}")
-    private int phone_number;
+    private String phone_number;
 
     @ApiObjectField(name= "address", description = "Customer's address")
     @Size (max = 200,message = "{right.length}")

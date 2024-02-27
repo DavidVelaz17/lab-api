@@ -21,12 +21,12 @@ public class CustomerDTO {
     private int age;
 
     @ApiObjectField(name = "phone_number", description = "Customer's ID")
-    private int phone_number;
+    private String phone_number;
 
     @ApiObjectField(name = "address", description = "Customer's ID")
     private String address;
 
-    @ApiObjectField(name = "date of birth", description = "Customer's ID")
+    @ApiObjectField(name = "date_of_birth", description = "Customer's ID")
     private LocalDate date_of_birth;
 
     @ApiObjectField(name = "status", description = "Customer's ID")

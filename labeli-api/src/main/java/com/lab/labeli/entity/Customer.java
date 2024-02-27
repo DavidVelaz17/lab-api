@@ -26,12 +26,12 @@ public class Customer {
     private int age;
 
     @Column(name = "phone_number", nullable = false)
-    private int phoneNumber;
+    private String phoneNumber;
 
     @Column(name = "address", nullable = false)
     private String address;
 
-    @Column(name = "date of birth", nullable = false)
+    @Column(name = "date_of_birth", nullable = false)
     private LocalDate dateOfBirth;
 
     @Column(name = "status", nullable = false)
