@@ -1,4 +1,4 @@
-package com.lab.labeli.controller;
+package com.lab.labeli.restcontrollers;
 
 import com.lab.labeli.dto.CustomerDTO;
 import com.lab.labeli.form.CustomerForm;
