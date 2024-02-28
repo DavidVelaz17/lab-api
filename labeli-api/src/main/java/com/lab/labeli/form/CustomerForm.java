@@ -4,6 +4,7 @@ import com.lab.labeli.entity.Status;
 import lombok.Data;
 import jakarta.validation.constraints.Size;
 import org.jsondoc.core.annotation.ApiObjectField;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -18,16 +19,16 @@ public class CustomerForm implements Serializable {
     @Size (max = 3,message = "{right.length}")
     private int age;
 
-    @ApiObjectField(name= "phoneNumber", description = "Customer's phone number")
-    @Size (max = 11,message = "{right.length}")
+    @ApiObjectField(name = "phoneNumber", description = "Doctor's phone number")
+    @Size(max = 13, message = "{phoneNumber.right.length}")
     private String phoneNumber;
 
     @ApiObjectField(name= "address", description = "Customer's address")
     @Size (max = 200,message = "{right.length}")
     private String address;
 
-    @ApiObjectField(name= "dateOfBirth", description = "Customer's date of birth")
-    @Size (max = 50,message = "{right.length}")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @ApiObjectField(name = "dateOfBirth", description = "Patient's birthday", required = true)
     private LocalDate dateOfBirth;
 
     @ApiObjectField(name= "status", description = "Customer's status")
