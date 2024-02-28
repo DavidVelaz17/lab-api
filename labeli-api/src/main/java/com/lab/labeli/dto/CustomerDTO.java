@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Getter
 @Builder
 public class CustomerDTO {
-    @ApiObjectField(name = "idCustomer", description = "Customer's ID")
+    @ApiObjectField(name = "idcustomers", description = "Customer's ID")
     private int idCustomer;
 
     @ApiObjectField(name = "name", description = "Customer's ID")
@@ -34,7 +34,7 @@ public class CustomerDTO {
 
     public static CustomerDTO build(final Customer customer){
         return CustomerDTO.builder()
-                .idCustomer(customer.getIdCustomer())
+                .idCustomer(customer.getIdcustomers())
                 .name(customer.getName())
                 .age(customer.getAge())
                 .dateOfBirth(customer.getDateOfBirth())

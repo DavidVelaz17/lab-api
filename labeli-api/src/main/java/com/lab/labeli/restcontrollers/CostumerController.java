@@ -32,8 +32,8 @@ public class CostumerController {
 
     @PostMapping("")
     public ResponseEntity<CustomerDTO> saveCustomer(@RequestBody @Valid final CustomerForm customerInfo) {
-        final CustomerDTO saveNewCustumer = customerService.createCustomer(customerInfo);
-        return ResponseEntity.status(HttpStatus.CREATED).body(saveNewCustumer);
+        final CustomerDTO saveCustomer = customerService.createCustomer(customerInfo);
+        return ResponseEntity.status(HttpStatus.CREATED).body(saveCustomer);
     }
 
     @DeleteMapping("/{customerId}")

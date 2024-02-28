@@ -17,7 +17,7 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false,unique = true)
-    private int idCustomer;
+    private int idcustomers;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -25,13 +25,13 @@ public class Customer {
     @Column(name = "age", nullable = false)
     private int age;
 
-    @Column(name = "phoneNumber", nullable = false)
+    @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
 
     @Column(name = "address", nullable = false)
     private String address;
 
-    @Column(name = "dateOfBirth", nullable = false)
+    @Column(name = "date_of_birth ", nullable = false)
     private LocalDate dateOfBirth;
 
     @Column(name = "status", nullable = false)
