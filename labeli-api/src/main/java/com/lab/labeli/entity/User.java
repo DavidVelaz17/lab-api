@@ -1,23 +1,21 @@
 package com.lab.labeli.entity;
 
-import com.lab.labeli.convertors.StatusConvertor;
-import com.lab.labeli.form.CustomerForm;
+import com.lab.labeli.convertors.RoleConvertor;
+import com.lab.labeli.form.UserForm;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-
 @Entity
 @Getter
-@Table(name = "customers")
+@Table(name = "users")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Customer {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idcustomers",nullable = false,unique = true)
-    private int idCustomers;
+    @Column(name = "idusers",nullable = false,unique = true)
+    private int idUser;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -31,28 +29,27 @@ public class Customer {
     @Column(name = "address", nullable = false)
     private String address;
 
-    @Column(name = "date_of_birth ", nullable = false)
-    private LocalDate dateOfBirth;
+    @Column(name = "password", nullable = false)
+    private String password;
 
-    @Column(name = "status", nullable = false)
-    @Convert(converter = StatusConvertor.class)
-    private Status status;
+    @Column(name = "role", nullable = false)
+    @Convert(converter = RoleConvertor.class)
+    private Role role;
 
-    public Customer(final CustomerForm form){
-        this.name = form.getName();
+    public User(final UserForm form){
+        this.name=form.getName();
         this.age=form.getAge();
         this.phoneNumber=form.getPhoneNumber();
         this.address=form.getAddress();
-        this.dateOfBirth=form.getDateOfBirth();
-        this.status=form.getStatus();
+        this.password=form.getPassword();
+        this.role=form.getRole();
     }
-
-    public void updateCustomer(final CustomerForm form){
-        this.name= form.getName();
+    public void updateUser(final UserForm form){
+        this.name=form.getName();
         this.age=form.getAge();
         this.phoneNumber=form.getPhoneNumber();
         this.address=form.getAddress();
-        this.dateOfBirth=form.getDateOfBirth();
-        this.status=form.getStatus();
+        this.password=form.getPassword();
+        this.role=form.getRole();
     }
 }

@@ -1,4 +1,4 @@
-package com.lab.labeli.convertos;
+package com.lab.labeli.convertors;
 
 import com.lab.labeli.entity.Status;
 import jakarta.persistence.AttributeConverter;
