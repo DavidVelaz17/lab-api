@@ -1,6 +1,7 @@
 package com.lab.labeli.form;
 
 import com.lab.labeli.entity.Status;
+import com.lab.labeli.entity.Tests;
 import lombok.Data;
 import jakarta.validation.constraints.Size;
 import org.jsondoc.core.annotation.ApiObjectField;
@@ -19,7 +20,7 @@ public class CustomerForm implements Serializable {
     @Size (max = 3,message = "{right.length}")
     private int age;
 
-    @ApiObjectField(name = "phoneNumber", description = "Doctor's phone number")
+    @ApiObjectField(name = "phoneNumber", description = "Customer's phone number")
     @Size(max = 13, message = "{phoneNumber.right.length}")
     private String phoneNumber;
 
@@ -28,10 +29,26 @@ public class CustomerForm implements Serializable {
     private String address;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @ApiObjectField(name = "dateOfBirth", description = "Patient's birthday", required = true)
+    @ApiObjectField(name = "dateOfBirth", description = "Customer's birthday", required = true)
     private LocalDate dateOfBirth;
 
     @ApiObjectField(name= "status", description = "Customer's status")
     @Size (max = 2,message = "{right.length}")
     private Status status;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @ApiObjectField(name= "pdfTimestamp", description = "PDF's timestamp")
+    private LocalDate pdfTimestamp;
+
+    @ApiObjectField(name= "doctorName", description = "Doctor's name")
+    @Size (max = 100,message = "{right.length}")
+    private String doctorName;
+
+    @ApiObjectField(name= "idTests", description = "Customer's status")
+    @Size (max = 2,message = "{right.length}")
+    private Tests idTests;
+
+    @ApiObjectField(name= "notes", description = "Customer's status")
+    @Size (max = 200,message = "{right.length}")
+    private String notes;
 }

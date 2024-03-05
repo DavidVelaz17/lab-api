@@ -6,5 +6,9 @@ CREATE TABLE IF NOT EXISTS `customers` (
     `address` VARCHAR(200) NOT NULL,
     `date_of_birth` DATE NOT NULL,
     `status` SMALLINT(2) NOT NULL,
+    `pdf_timestamp` DATE NULL,
+    `doctor_name` VARCHAR(100) NULL,
+    `idtests` INT NOT NULL,
+    `notes` VARCHAR(200) NULL,
     PRIMARY KEY (`idcustomers`)
    )ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;

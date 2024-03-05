@@ -16,7 +16,6 @@ import java.util.List;
 public class CostumerController {
     private final CustomerService customerService;
 
-
     @GetMapping("")
     public ResponseEntity<List<CustomerDTO>> getAllCustomers() {
         final List<CustomerDTO> customersList = customerService.getAllCustomer();
@@ -25,15 +24,15 @@ public class CostumerController {
 
 
     @GetMapping("/{customerId}")
-    public ResponseEntity<CustomerDTO> getCustomerId(@PathVariable("customerId") final int customerId) throws Exception {
+    public ResponseEntity<CustomerDTO> getCustomerById(@PathVariable("customerId") final int customerId) throws Exception {
         final CustomerDTO customerDTOInfo = customerService.getCustomerById(customerId);
         return ResponseEntity.ok().body(customerDTOInfo);
     }
 
     @PostMapping("")
-    public ResponseEntity<CustomerDTO> saveCustomer(@RequestBody @Valid final CustomerForm customerInfo) {
-        final CustomerDTO saveCustomer = customerService.createCustomer(customerInfo);
-        return ResponseEntity.status(HttpStatus.CREATED).body(saveCustomer);
+    public ResponseEntity<CustomerDTO> saveCustomer(@RequestBody @Valid final CustomerForm form) {
+        final CustomerDTO saveCustomerInfo = customerService.createCustomer(form);
+        return ResponseEntity.status(HttpStatus.CREATED).body(saveCustomerInfo);
     }
 
     @DeleteMapping("/{customerId}")
