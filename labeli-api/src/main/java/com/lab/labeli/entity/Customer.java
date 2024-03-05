@@ -62,7 +62,7 @@ public class Customer {
         this.pdfTimestamp=form.getPdfTimestamp();
         this.doctorName=form.getDoctorName();
         this.idTests=form.getIdTests();
-        this.notes=form.getName();
+        this.notes=form.getNotes();
     }
 
     public void updateCustomer(final CustomerForm form){
@@ -75,6 +75,6 @@ public class Customer {
         this.pdfTimestamp=form.getPdfTimestamp();
         this.doctorName=form.getDoctorName();
         this.idTests=form.getIdTests();
-        this.notes=form.getName();
+        this.notes=form.getNotes();
     }
 }
