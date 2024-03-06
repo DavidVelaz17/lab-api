@@ -3,9 +3,7 @@ package com.lab.labeli.entity;
 import com.lab.labeli.convertors.RoleConvertor;
 import com.lab.labeli.form.UserForm;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,6 +13,8 @@ import java.util.List;
 
 @Entity
 @Getter
+@Builder
+@AllArgsConstructor
 @Table(name = "users")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class User implements UserDetails{
@@ -56,7 +56,7 @@ public class User implements UserDetails{
         this.age=form.getAge();
         this.phoneNumber=form.getPhoneNumber();
         this.address=form.getAddress();
-        this.password=form.getPassword();
+//        this.password=form.getPassword();
         this.role=form.getRole();
     }
     @Override

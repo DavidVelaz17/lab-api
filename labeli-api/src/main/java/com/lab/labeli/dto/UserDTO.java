@@ -25,8 +25,8 @@ public class UserDTO {
     @ApiObjectField(name = "address", description = "User's address")
     private String address;
 
-    @ApiObjectField(name = "password", description = "User's password")
-    private String password;
+//    @ApiObjectField(name = "password", description = "User's password")
+//    private String password;
 
     @ApiObjectField(name = "role", description = "User's role")
     private Role role;
