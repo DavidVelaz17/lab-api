@@ -34,7 +34,7 @@ public class JwtService {
                 .claim("userName", userService.getUserByName(user.getUsername()).getName())
                 .claim("role", userService.getUserByName(user.getUsername()).getRole())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis()+1000*60*24))
+                .setExpiration(new Date(System.currentTimeMillis()+(1000 * 60 * 60 * 10)))
                 .signWith(getKey(), SignatureAlgorithm.HS256)
                 .compact();
         return jwts;
