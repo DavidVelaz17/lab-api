@@ -4,6 +4,7 @@ import com.lab.labeli.repository.UserRepository;
 import com.lab.labeli.requests.LoginRequest;
 import com.lab.labeli.responses.AuthResponse;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.security.authentication.AuthenticationManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -12,12 +13,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
+@PropertySource("classpath:ValidationsMessages.properties")
 public class AuthService {
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
     private final JwtService jwtService;
-    //@Value("${not.found}")
-    //private String notFound;
+    @Value("${not.found}")
+    private String notFound;
 
     public AuthResponse login(LoginRequest request) throws Exception {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getName(),request.getPassword()));
@@ -30,7 +32,7 @@ public class AuthService {
     }
     private void validateUserIfExists(final String name) throws Exception {
         if (userRepository.findByName(name) == null) {
-            throw new Exception("Not found");
+            throw new Exception(notFound);
         }
     }
 }
