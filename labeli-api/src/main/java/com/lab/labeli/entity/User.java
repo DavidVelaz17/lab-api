@@ -51,13 +51,13 @@ public class User implements UserDetails{
         this.password=form.getPassword();
         this.role=form.getRole();
     }
-    public void updateUser(final UserForm form){
-        this.name=form.getName();
-        this.age=form.getAge();
-        this.phoneNumber=form.getPhoneNumber();
-        this.address=form.getAddress();
-//        this.password=form.getPassword();
-        this.role=form.getRole();
+    public void updateUser(final User user){
+        this.name=user.getName();
+        this.age=user.getAge();
+        this.phoneNumber=user.getPhoneNumber();
+        this.address=user.getAddress();
+        this.password=user.getPassword();
+        this.role=user.getRole();
     }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

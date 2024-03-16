@@ -5,6 +5,7 @@ import com.lab.labeli.entity.Customer;
 import com.lab.labeli.form.CustomerForm;
 import com.lab.labeli.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -16,10 +17,13 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-//@PropertySource("classpath:ValidationMessages.properties")
+@PropertySource("classpath:ValidationsMessages.properties")
 public class CustomerService {
 
     private final CustomerRepository customerRepository;
+
+    @Value("${not.found}")
+    private String notFound;
 
     public List<CustomerDTO> getAllCustomer() {
         final List<Customer> getAll = customerRepository.findAll();
@@ -27,12 +31,14 @@ public class CustomerService {
     }
 
 
-    public CustomerDTO getCustomerById(final int idCustomer) {
+    public CustomerDTO getCustomerById(final int idCustomer) throws Exception {
+        validateIfCustomerExists(idCustomer);
         final Customer customer = customerRepository.findById(idCustomer).get();
         return CustomerDTO.build(customer);
     }
 
-    public void deleteCustomer(final int idCustomer) {
+    public void deleteCustomer(final int idCustomer) throws Exception {
+        validateIfCustomerExists(idCustomer);
         customerRepository.deleteById(idCustomer);
     }
 
@@ -42,11 +48,18 @@ public class CustomerService {
         return CustomerDTO.build(customer);
     }
 
-    public CustomerDTO updateCustomer(final CustomerForm form, final int idCustomer) {
+    public CustomerDTO updateCustomer(final CustomerForm form, final int idCustomer) throws Exception {
+        validateIfCustomerExists(idCustomer);
         final Customer customer = customerRepository.findById(idCustomer).get();
         customer.updateCustomer(form);
         customerRepository.save(customer);
         return CustomerDTO.build(customer);
 
+    }
+
+    private void validateIfCustomerExists(final int idCustomer) throws Exception{
+        if(!customerRepository.existsById(idCustomer)){
+            throw new Exception(notFound);
+        }
     }
 }

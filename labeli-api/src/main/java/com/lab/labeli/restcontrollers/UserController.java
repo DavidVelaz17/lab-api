@@ -4,10 +4,12 @@ import com.lab.labeli.dto.CustomerDTO;
 import com.lab.labeli.dto.UserDTO;
 import com.lab.labeli.form.UserForm;
 import com.lab.labeli.services.UserService;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +27,7 @@ public class UserController {
     }
 
     @GetMapping("/{userId}")
-    public ResponseEntity<UserDTO> getUserById(@PathVariable("userId") final int userId){
+    public ResponseEntity<UserDTO> getUserById(@PathVariable("userId") final int userId) throws Exception {
         final UserDTO userDTOInfo = userService.getUserById(userId);
         return ResponseEntity.ok().body(userDTOInfo);
     }
@@ -37,13 +39,13 @@ public class UserController {
     }
 
     @DeleteMapping("/{userId}")
-    public ResponseEntity<Void> deleteUser(@PathVariable("userId") final int userId){
+    public ResponseEntity<Void> deleteUser(@PathVariable("userId") final int userId) throws Exception {
         userService.deleteUser(userId);
         return ResponseEntity.ok().build();
     }
 
     @PatchMapping("/{userId}")
-    public ResponseEntity<UserDTO> updateUser(@RequestBody @Valid final UserForm form, @PathVariable("userId") final int userId){
+    public ResponseEntity<UserDTO> updateUser(@RequestBody @Valid final UserForm form, @PathVariable("userId") final int userId) throws Exception {
         final UserDTO updateUserInfo = userService.updateUser(form,userId);
         return ResponseEntity.ok().body(updateUserInfo);
     }
