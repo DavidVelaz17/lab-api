@@ -1,7 +1,6 @@
 package com.lab.labeli.entity;
 
 import com.lab.labeli.convertors.StatusConvertor;
-import com.lab.labeli.convertors.TestsConvertor;
 import com.lab.labeli.form.CustomerForm;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -46,8 +45,7 @@ public class Customer {
     private String doctorName;
 
     @Column(name = "idtests", nullable = false)
-    @Convert(converter = TestsConvertor.class)
-    private Tests idTests;
+    private int idTests;
 
     @Column(name = "notes", nullable = false)
     private String notes;

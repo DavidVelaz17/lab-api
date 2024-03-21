@@ -2,12 +2,9 @@ package com.lab.labeli.dto;
 
 import com.lab.labeli.entity.Customer;
 import com.lab.labeli.entity.Status;
-import com.lab.labeli.entity.Tests;
-import jakarta.validation.constraints.Size;
 import lombok.Builder;
 import lombok.Getter;
 import org.jsondoc.core.annotation.ApiObjectField;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -41,10 +38,10 @@ public class CustomerDTO {
     @ApiObjectField(name= "doctorName", description = "Doctor's name")
     private String doctorName;
 
-    @ApiObjectField(name= "idTests", description = "Customer's status")
-    private Tests idTests;
+    @ApiObjectField(name= "idTests", description = "Test's id")
+    private int idTests;
 
-    @ApiObjectField(name= "notes", description = "Customer's status")
+    @ApiObjectField(name= "notes", description = "Customer's notes")
     private String notes;
 
     public static CustomerDTO build(final Customer customer){
