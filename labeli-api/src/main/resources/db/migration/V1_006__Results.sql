@@ -1,9 +1,9 @@
 CREATE TABLE IF NOT EXISTS `results` (
     `idresults` INT NOT NULL,
-    `idcustomers` INT NULL,
-    `idtests` INT NULL,
+    `idcustomers` INT NOT NULL,
+    `idtests` INT NOT NULL,
     `result_timestamp` VARCHAR(45) NULL,
-    `result_note` VARCHAR(45) NULL,
+    `result_note` VARCHAR(100) NULL,
     PRIMARY KEY (`idresults`),
     INDEX `idcustomer_idx` (`idcustomers` ASC) VISIBLE,
     INDEX `idtests_idx` (`idtests` ASC) VISIBLE,
