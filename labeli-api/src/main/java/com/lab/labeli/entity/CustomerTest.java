@@ -23,12 +23,12 @@ public class CustomerTest {
     private Integer idTest;
 
     public CustomerTest(final CustomerTestForm formCustomerTest) {
-        this.idCustumers = formCustomerTest.getIdCustumer();
+        this.idCustumers = formCustomerTest.getIdCustomer();
         this.idTest = formCustomerTest.getIdTest();
     }
 
     public void updateCustomerTest(final CustomerTestForm formCustomerTest) {
-        this.idCustumers = formCustomerTest.getIdCustumer();
+        this.idCustumers = formCustomerTest.getIdCustomer();
         this.idTest = formCustomerTest.getIdTest();
     }
 
