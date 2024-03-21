@@ -32,17 +32,8 @@ public class CustomerDTO {
     @ApiObjectField(name = "status", description = "Customer's ID")
     private Status status;
 
-    @ApiObjectField(name= "pdfTimestamp", description = "PDF's timestamp")
-    private LocalDate pdfTimestamp;
-
     @ApiObjectField(name= "doctorName", description = "Doctor's name")
     private String doctorName;
-
-    @ApiObjectField(name= "idTests", description = "Test's id")
-    private int idTests;
-
-    @ApiObjectField(name= "notes", description = "Customer's notes")
-    private String notes;
 
     public static CustomerDTO build(final Customer customer){
         return CustomerDTO.builder()
@@ -53,10 +44,7 @@ public class CustomerDTO {
                 .phoneNumber(customer.getPhoneNumber())
                 .address(customer.getAddress())
                 .status(customer.getStatus())
-                .pdfTimestamp(customer.getPdfTimestamp())
                 .doctorName(customer.getDoctorName())
-                .idTests(customer.getIdTests())
-                .notes(customer.getNotes())
                 .build();
     }
 }

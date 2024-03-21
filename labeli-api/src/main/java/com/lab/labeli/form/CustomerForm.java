@@ -35,18 +35,7 @@ public class CustomerForm implements Serializable {
     @Size (max = 2,message = "{right.length}")
     private Status status;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @ApiObjectField(name= "pdfTimestamp", description = "PDF's timestamp")
-    private LocalDate pdfTimestamp;
-
     @ApiObjectField(name= "doctorName", description = "Doctor's name")
     @Size (max = 100,message = "{right.length}")
     private String doctorName;
-
-    @ApiObjectField(name= "idTests", description = "Test's id")
-    private int idTests;
-
-    @ApiObjectField(name= "notes", description = "Customer's notes")
-    @Size (max = 200,message = "{right.length}")
-    private String notes;
 }
