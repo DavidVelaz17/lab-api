@@ -24,22 +24,22 @@ public class User implements UserDetails{
     @Column(name = "idusers",nullable = false,unique = true)
     private int idUser;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "user_name", nullable = false)
     private String name;
 
-    @Column(name = "age", nullable = false)
+    @Column(name = "user_age", nullable = false)
     private int age;
 
-    @Column(name = "phone_number", nullable = false)
+    @Column(name = "user_phone_number", nullable = false)
     private String phoneNumber;
 
-    @Column(name = "address", nullable = false)
+    @Column(name = "user_address", nullable = false)
     private String address;
 
-    @Column(name = "password", nullable = false)
+    @Column(name = "user_password", nullable = false)
     private String password;
 
-    @Column(name = "role", nullable = false)
+    @Column(name = "user_role", nullable = false)
     @Convert(converter = RoleConvertor.class)
     private Role role;
 
