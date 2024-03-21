@@ -23,10 +23,10 @@ public class OrderDTO {
     private LocalDate orderTimeStamp;
 
     @ApiObjectField(name = "orderDeposit", description = "Order's Deposit")
-    private int orderDeposit;
+    private double orderDeposit;
 
     @ApiObjectField(name = "orderTotal", description = "Order's Total")
-    private int orderTotal;
+    private double orderTotal;
 
     @ApiObjectField(name = "orderNotes", description = "Order's Notes")
     private String orderNotes;

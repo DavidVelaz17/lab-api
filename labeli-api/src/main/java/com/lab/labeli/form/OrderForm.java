@@ -26,11 +26,11 @@ public class OrderForm implements Serializable {
 
     @ApiObjectField(name= "orderDeposit", description = "Order's deposit")
     @Positive
-    private int orderDeposit;
+    private double orderDeposit;
 
     @ApiObjectField(name= "orderTotal", description = "Order's total")
     @Positive
-    private int orderTotal;
+    private double orderTotal;
 
     @ApiObjectField(name= "orderNotes", description = "Order's notes")
     @Size(max = 200,message = "{right.length}")

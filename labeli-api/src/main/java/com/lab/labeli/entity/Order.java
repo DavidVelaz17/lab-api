@@ -28,10 +28,10 @@ public class Order {
     private LocalDate orderTimeStamp;
 
     @Column(name = "order_deposit", nullable = false)
-    private int orderDeposit;
+    private double orderDeposit;
 
     @Column(name = "oorder_total", nullable = false)
-    private int orderTotal;
+    private double orderTotal;
 
     @Column(name = "order_notes", nullable = false)
     private String orderNotes;
