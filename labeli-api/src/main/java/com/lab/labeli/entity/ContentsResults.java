@@ -1,13 +1,10 @@
 package com.lab.labeli.entity;
-import com.lab.labeli.convertors.StatusConvertor;
 import com.lab.labeli.form.ContentsResultsForm;
-import com.lab.labeli.form.CustomerForm;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 @Entity
 @Getter
 @Table(name = "contents_results")
