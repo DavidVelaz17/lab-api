@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Data
 public class TestForm implements Serializable {
 
-    @ApiObjectField(name = "test_name", description = "Test's name")
+    @ApiObjectField(name = "testName", description = "Test's name")
     @Size(max = 100, message = "{right.length}")
     private String testName;
 
