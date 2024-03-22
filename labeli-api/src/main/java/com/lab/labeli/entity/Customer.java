@@ -1,7 +1,6 @@
 package com.lab.labeli.entity;
 
 import com.lab.labeli.convertors.StatusConvertor;
-import com.lab.labeli.convertors.TestsConvertor;
 import com.lab.labeli.form.CustomerForm;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -20,37 +19,28 @@ public class Customer {
     @Column(name = "idcustomers",nullable = false,unique = true)
     private int idCustomers;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "customer_name", nullable = false)
     private String name;
 
-    @Column(name = "age", nullable = false)
+    @Column(name = "customer_age", nullable = false)
     private int age;
 
-    @Column(name = "phone_number", nullable = false)
+    @Column(name = "customer_phone_number", nullable = false)
     private String phoneNumber;
 
-    @Column(name = "address", nullable = false)
+    @Column(name = "customer_address", nullable = false)
     private String address;
 
-    @Column(name = "date_of_birth", nullable = false)
+    @Column(name = "customer_date_of_birth", nullable = false)
     private LocalDate dateOfBirth;
 
-    @Column(name = "status", nullable = false)
+    @Column(name = "customer_status", nullable = false)
     @Convert(converter = StatusConvertor.class)
     private Status status;
 
-    @Column(name = "pdf_timestamp", nullable = false)
-    private LocalDate pdfTimestamp;
-
-    @Column(name = "doctor_name", nullable = false)
+    @Column(name = "customer_doctor_name", nullable = false)
     private String doctorName;
 
-    @Column(name = "idtests", nullable = false)
-    @Convert(converter = TestsConvertor.class)
-    private Tests idTests;
-
-    @Column(name = "notes", nullable = false)
-    private String notes;
 
     public Customer(final CustomerForm form){
         this.name = form.getName();
@@ -59,10 +49,7 @@ public class Customer {
         this.address=form.getAddress();
         this.dateOfBirth=form.getDateOfBirth();
         this.status=form.getStatus();
-        this.pdfTimestamp=form.getPdfTimestamp();
         this.doctorName=form.getDoctorName();
-        this.idTests=form.getIdTests();
-        this.notes=form.getNotes();
     }
 
     public void updateCustomer(final CustomerForm form){
@@ -72,9 +59,6 @@ public class Customer {
         this.address=form.getAddress();
         this.dateOfBirth=form.getDateOfBirth();
         this.status=form.getStatus();
-        this.pdfTimestamp=form.getPdfTimestamp();
         this.doctorName=form.getDoctorName();
-        this.idTests=form.getIdTests();
-        this.notes=form.getNotes();
     }
 }
