@@ -31,7 +31,6 @@ public class ContentsResults {
     }
 
     public void updateContentsResults(final ContentsResultsForm form){
-        this.contentResultId=form.getContResultId();
         this.resultId=form.getResultId();
         this.contentId=form.getContentId();
         this.resultValue=form.getResultValue();
