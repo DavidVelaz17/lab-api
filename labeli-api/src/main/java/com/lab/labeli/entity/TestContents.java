@@ -16,10 +16,10 @@ public class TestContents {
     @Column(name = "test_content_id", nullable = false, unique = true)
     private int idTestContents;
 
-    @Column(name = "test_id", nullable = false, unique = true)
+    @Column(name = "test_id", nullable = false)
     private int testsId;
 
-    @Column(name = "content_id", nullable = false, unique = true)
+    @Column(name = "content_id", nullable = false)
     private int contentId;
 
     public TestContents(final TestContentsForm form){

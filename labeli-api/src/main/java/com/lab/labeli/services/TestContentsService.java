@@ -7,16 +7,7 @@ import com.lab.labeli.repository.TestContentsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
-
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
-
 import java.util.List;
 
 @Service
@@ -37,7 +28,7 @@ public TestContentsDTO getTestContentsById(final int idTest) throws Exception {
     return TestContentsDTO.build(testContents);
 }
 
-public void deleteTestContentsCustomer(final int idTest) throws Exception {
+public void deleteTestContents(final int idTest) throws Exception {
     validateIfTestContentsExists(idTest);
     testContentsRepository.deleteById(idTest);
 }
