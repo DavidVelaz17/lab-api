@@ -11,9 +11,6 @@ import java.time.LocalDate;
 
 @Data
 public class ContentsResultsForm implements Serializable {
-    @ApiObjectField(name= "contentResultId", description = "Content Result Id")
-    private int contResultId;
-
     @ApiObjectField(name= "resultId", description = "Result Id")
     private int resultId;
 

@@ -12,7 +12,7 @@ public class ContentsResultsDTO {
     private int contResultId;
 
     @ApiObjectField(name= "resultId", description = "Result Id")
-    private int resId;
+    private int resultId;
 
     @ApiObjectField(name= "contentId", description = "Content Ids")
     private int contId;
@@ -24,7 +24,7 @@ public class ContentsResultsDTO {
     public static ContentsResultsDTO build(final ContentsResults content){
         return ContentsResultsDTO.builder()
                 .contResultId(content.getContentResultId())
-                .resId(content.getResultId())
+                .resultId(content.getResultId())
                 .contId(content.getContentId())
                 .resValue(content.getResultValue())
                 .build();

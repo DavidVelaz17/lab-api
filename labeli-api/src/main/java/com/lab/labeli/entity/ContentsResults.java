@@ -15,17 +15,16 @@ public class ContentsResults {
     @Column(name = "content_result_id",nullable = false,unique = true)
     private int contentResultId;
 
-    @Column(name = "result_id",nullable = false,unique = true)
+    @Column(name = "result_id",nullable = false)
     private int resultId;
 
-    @Column(name = "content_id",nullable = false,unique = true)
+    @Column(name = "content_id",nullable = false)
     private int contentId;
 
-    @Column(name = "result_value",nullable = false,unique = true)
+    @Column(name = "result_value",nullable = false)
     private String resultValue;
 
     public ContentsResults(final ContentsResultsForm form){
-        this.contentResultId=form.getContResultId();
         this.resultId=form.getResultId();
         this.contentId=form.getContentId();
         this.resultValue=form.getResultValue();
