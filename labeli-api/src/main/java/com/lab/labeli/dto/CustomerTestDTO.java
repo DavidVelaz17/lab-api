@@ -14,7 +14,7 @@ public class CustomerTestDTO {
     @ApiObjectField(name = "idCustomer", description = "Customer's ID")
     private int idCustomer;
 
-    @ApiObjectField(name = "idTEst", description = "Customer's ID")
+    @ApiObjectField(name = "idTest", description = "Customer's ID")
     private int idTest;
 
     public static CustomerTestDTO build(final CustomerTest customerTest) {
