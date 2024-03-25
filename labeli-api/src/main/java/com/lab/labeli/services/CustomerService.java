@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -61,5 +64,15 @@ public class CustomerService {
         if(!customerRepository.existsById(idCustomer)){
             throw new Exception(notFound);
         }
+    }
+
+    public Map<Integer, CustomerDTO> getCustomersByIds(final List<Integer> customersIds){
+        final List<Customer> customers = customerRepository.findAllById(customersIds);
+        return customersDTOs(customers);
+    }
+
+    private Map<Integer, CustomerDTO> customersDTOs(final List<Customer> customers){
+        final List<CustomerDTO> customerDTOS = customers.stream().map(CustomerDTO::build).toList();
+        return customerDTOS.stream().collect(Collectors.toMap(CustomerDTO::getIdCustomer, Function.identity()));
     }
 }

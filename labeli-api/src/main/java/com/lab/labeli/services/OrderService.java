@@ -1,6 +1,6 @@
 package com.lab.labeli.services;
 
-import com.lab.labeli.dto.OrderDTO;
+import com.lab.labeli.dto.*;
 import com.lab.labeli.entity.Order;
 import com.lab.labeli.form.OrderForm;
 import com.lab.labeli.repository.OrderRepository;
@@ -10,6 +10,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -17,13 +18,22 @@ import java.util.List;
 public class OrderService {
 
     private final OrderRepository orderRepository;
+    private final CustomerService customerService;
+    private final UserService userService;
+    private final OrderTestService orderTestService;
 
     @Value("${not.found}")
     private String notFound;
 
     public List<OrderDTO> getAllOrders(){
-        final List<Order> getAll = orderRepository.findAll();
-        return getAll.stream().map(OrderDTO::build).toList();
+        final List<Order> orders = orderRepository.findAll();
+        final Map<Integer, CustomerDTO> customerDTOMap =
+                getCustomersMap(orders.stream().map(Order::getIdCustomers).toList());
+        final Map<Integer, UserDTO> userDTOMap =
+                getUsersMap(orders.stream().map(Order::getIdUsers).toList());
+        final Map<Integer, OrderTestDTO> orderTestDTOMap =
+                getOrderTestsByIds(orders.stream().map(Order::getIdOrders).toList());
+        return orders.stream().map(OrderDTO::build).toList();
     }
 
     public OrderDTO getOrderById(final int idOrder) throws Exception{
@@ -55,5 +65,17 @@ public class OrderService {
         if(!orderRepository.existsById(idOrder)){
             throw new Exception(notFound);
         }
+    }
+
+    private Map<Integer, CustomerDTO> getCustomersMap(final List<Integer> customersIds){
+        return customerService.getCustomersByIds(customersIds);
+    }
+
+    private Map<Integer, UserDTO> getUsersMap(final List<Integer> usersIds){
+        return userService.getUsersByIds(usersIds);
+    }
+
+    private Map<Integer, OrderTestDTO> getOrderTestsByIds(final List<Integer> ordersTestsIds) {
+        return orderTestService.getOrdersTestsByIds(ordersTestsIds);
     }
 }
