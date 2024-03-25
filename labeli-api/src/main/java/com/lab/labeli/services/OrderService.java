@@ -2,6 +2,7 @@ package com.lab.labeli.services;
 
 import com.lab.labeli.dto.*;
 import com.lab.labeli.entity.Order;
+import com.lab.labeli.entity.User;
 import com.lab.labeli.form.OrderForm;
 import com.lab.labeli.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
@@ -39,7 +40,9 @@ public class OrderService {
     public OrderDTO getOrderById(final int idOrder) throws Exception{
         validateIfOrderExists(idOrder);
         final Order order = orderRepository.findById(idOrder).get();
-        return OrderDTO.build(order);
+        final UserDTO userDTO = userService.getUserById(order.getIdUsers());
+        final CustomerDTO customerDTO = customerService.getCustomerById(order.getIdCustomers());
+        return OrderDTO.build(order,userDTO,customerDTO);
     }
 
     public OrderDTO creteOrder(final OrderForm form){
