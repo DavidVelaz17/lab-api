@@ -22,7 +22,7 @@ public class TestContentsController {
     }
 
     @GetMapping("/{testContentId}")
-    public ResponseEntity<TestContentsDTO> getTestContentsId(@PathVariable("testContentId") final int testContentId)throws Exception{
+    public ResponseEntity<TestContentsDTO> getTestContentsById(@PathVariable("testContentId") final int testContentId)throws Exception{
         final TestContentsDTO testContentsDTOInfo = testContentsService.getTestContentsById(testContentId);
         return ResponseEntity.ok().body(testContentsDTOInfo);
     }
