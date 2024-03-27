@@ -10,7 +10,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
-@RequestMapping(path = "/lab/customer")
+@RequestMapping(path = "/lab/TestContents")
 @RequiredArgsConstructor
 public class TestContentsController {
     private final TestContentsService testContentsService;
