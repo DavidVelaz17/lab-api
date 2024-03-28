@@ -9,6 +9,9 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -30,6 +33,20 @@ public class ContentsResultsService {
         final ContentsResults contentsResults = contentsResultsRepository.findById(idContentsResult).get();
         return ContentsResultsDTO.build(contentsResults);
     }
+
+    public Map<Integer, ContentsResultsDTO> getIdListByContentResults(final List<Integer> idContentsResult){
+        final List<ContentsResults> idList = contentsResultsRepository.findAllById(idContentsResult);
+        return idLIstByContentResultsDTO(idList);
+    }
+
+    private Map<Integer,ContentsResultsDTO> idLIstByContentResultsDTO(final List<ContentsResults> contentsResultsInfo){
+        final List<ContentsResultsDTO> ContentsResultsDTOS=
+                contentsResultsInfo.stream().map(ContentsResultsDTO::build).toList();
+        return ContentsResultsDTOS
+                .stream()
+                .collect(Collectors.toMap(ContentsResultsDTO::getResultId, Function.identity()));
+    }
+
 
     public void deleteContentsResults(final int idContentsResults) throws Exception {
         validateIfContentsResultsExists(idContentsResults);
