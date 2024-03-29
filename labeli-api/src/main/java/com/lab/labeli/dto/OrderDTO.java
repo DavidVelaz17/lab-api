@@ -25,6 +25,9 @@ public class OrderDTO {
     @ApiObjectField(name = "user", description = "User's data")
     private UserDTO user;
 
+    @ApiObjectField(name = "orderTest", description = "Order's test")
+    private OrderTestDTO orderTest;
+
     @ApiObjectField(name = "orderTimeStamp", description = "Order's Time Stamp")
     private LocalDate orderTimeStamp;
 
@@ -49,13 +52,16 @@ public class OrderDTO {
                 .build();
     }
 
-    public static OrderDTO build(final Order order, final UserDTO user, final CustomerDTO customer){
+    public static OrderDTO build(final Order order, final UserDTO user,
+                                 final CustomerDTO customer,
+                                 final OrderTestDTO orderTest){
         return OrderDTO.builder()
                 .idOrders(order.getIdOrders())
                 .idCustomers(order.getIdCustomers())
                 .customer(customer)
                 .idUsers(order.getIdUsers())
                 .user(user)
+                .orderTest(orderTest)
                 .orderTimeStamp(order.getOrderTimeStamp())
                 .orderDeposit(order.getOrderDeposit())
                 .orderTotal(order.getOrderTotal())

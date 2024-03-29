@@ -34,7 +34,18 @@ public class OrderService {
                 getUsersMap(orders.stream().map(Order::getIdUsers).toList());
         final Map<Integer, OrderTestDTO> orderTestDTOMap =
                 getOrderTestsByIds(orders.stream().map(Order::getIdOrders).toList());
-        return orders.stream().map(OrderDTO::build).toList();
+        return orders
+                .stream()
+                .map(order -> OrderDTO
+                    .build(order,
+                            userDTOMap
+                                .get(order.getIdUsers()),
+                            customerDTOMap
+                                .get(order.getIdCustomers()),
+                            orderTestDTOMap
+                                .get(order.getIdOrders())
+                    ))
+                .toList();
     }
 
     public OrderDTO getOrderById(final int idOrder) throws Exception{
@@ -42,7 +53,8 @@ public class OrderService {
         final Order order = orderRepository.findById(idOrder).get();
         final UserDTO userDTO = userService.getUserById(order.getIdUsers());
         final CustomerDTO customerDTO = customerService.getCustomerById(order.getIdCustomers());
-        return OrderDTO.build(order,userDTO,customerDTO);
+        final OrderTestDTO orderTestDTO = orderTestService.getOrderTestByIdOrder(order.getIdOrders());
+        return OrderDTO.build(order,userDTO,customerDTO,orderTestDTO);
     }
 
     public OrderDTO creteOrder(final OrderForm form){
