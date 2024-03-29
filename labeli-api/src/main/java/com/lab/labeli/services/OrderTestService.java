@@ -1,7 +1,6 @@
 package com.lab.labeli.services;
 
 import com.lab.labeli.dto.OrderTestDTO;
-import com.lab.labeli.dto.TestDTO;
 import com.lab.labeli.entity.OrderTest;
 import com.lab.labeli.form.OrderTestForm;
 import com.lab.labeli.repository.OrderTestRepository;
@@ -69,13 +68,7 @@ public class OrderTestService {
 
     public Map<Integer, OrderTestDTO> getOrdersTestsByIds(final List<Integer> ordersTestsIds) {
         final List<OrderTest> orderTests = orderTestRepository.findAllById(ordersTestsIds);
-        final Map<Integer, TestDTO> testDTOMap =
-                getTestsByIds(orderTests.stream().map(OrderTest::getIdTest).toList());
         return ordersTestsDTOs(orderTests);
-    }
-
-    private Map<Integer, TestDTO> getTestsByIds(final List<Integer> testsIds) {
-        return testService.getTestsByIds(testsIds);
     }
 
     private Map<Integer, OrderTestDTO> ordersTestsDTOs(final List<OrderTest> orderTests) {
