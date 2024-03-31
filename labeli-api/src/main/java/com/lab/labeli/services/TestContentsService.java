@@ -2,6 +2,7 @@ package com.lab.labeli.services;
 
 import com.lab.labeli.dto.TestContentsDTO;
 import com.lab.labeli.dto.TestDTO;
+import com.lab.labeli.entity.Test;
 import com.lab.labeli.entity.TestContents;
 import com.lab.labeli.form.TestContentsForm;
 import com.lab.labeli.repository.TestContentsRepository;
@@ -19,16 +20,15 @@ import java.util.Map;
 public class TestContentsService {
     private final TestContentsRepository testContentsRepository;
     private final TestService testService;
-    @Value("${not.found}")
     private String notFound;
 
     private Map<Integer, TestDTO> getTestIdsMap(final List<Integer> contentsId) {
         return testService.getIdListByTest(contentsId);
     }
-
 public List <TestContentsDTO> getAllTestContents(){
-    final List<TestContents> getAll= testContentsRepository.findAll();
-    return getAll.stream().map(TestContentsDTO::build).toList();
+    final List<TestContents> testContentsList= testContentsRepository.findAll();
+    final Map<Integer, TestDTO> contTestContentsListId = getTestIdsMap(testContentsList.stream().map(TestContents::getIdTestContents).toList());
+    return testContentsList.stream().map(resultAndContentResults -> TestContentsDTO.build(resultAndContentResults, contTestContentsListId.get(resultAndContentResults.getIdTestContents()))).toList();
 }
 public TestContentsDTO getTestContentsById(final int idTest) throws Exception {
     validateIfTestContentsExists(idTest);
