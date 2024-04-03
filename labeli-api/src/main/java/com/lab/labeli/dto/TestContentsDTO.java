@@ -15,14 +15,14 @@ public class TestContentsDTO {
     @ApiObjectField(name= "contentId", description = "Identifier container")
     private int contentId;
 
-    @ApiObjectField(name= "testResults", description = "Identifier container")
+    @ApiObjectField(name= "contentId", description = "Identifier test")
     private TestDTO testDTOResults;
 
-    public static TestContentsDTO build(final TestContents customer){
+    public static TestContentsDTO build(final TestContents testContents){
         return TestContentsDTO.builder()
-                .testContentId(customer.getIdTestContents())
-                .testId(customer.getTestsId())
-                .contentId(customer.getContentId())
+                .testContentId(testContents.getIdTestContents())
+                .testId(testContents.getTestsId())
+                .contentId(testContents.getContentId())
                 .build();
     }
 
