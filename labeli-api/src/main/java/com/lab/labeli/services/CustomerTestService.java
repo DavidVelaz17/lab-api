@@ -35,7 +35,7 @@ public class CustomerTestService {
     private Map<Integer, TestDTO> getTestIdsMap(final List<Integer> contentsId) {
         return testService.getIdListByTest(contentsId);
     }
-    public List <TestContentsDTO> getAllTestContents(){
+    public List <TestContentsDTO> getAllCustomerTest(){
         final List<TestContents> testContentsList= testContentsRepository.findAll();
         final Map<Integer, TestDTO> contTestContentsListId = getTestIdsMap(testContentsList.stream().map(TestContents::getIdTestContents).toList());
         return testContentsList.stream().map(resultAndContentResults -> TestContentsDTO.build(resultAndContentResults, contTestContentsListId.get(resultAndContentResults.getIdTestContents()))).toList();
