@@ -26,11 +26,11 @@ public class TestContentsDTO {
                 .build();
     }
 
-    public static TestContentsDTO build(final TestContents customer, final TestDTO testResults){
+    public static TestContentsDTO build(final TestContents testContents, final TestDTO testResults){
         return TestContentsDTO.builder()
-                .testContentId(customer.getIdTestContents())
-                .testId(customer.getTestsId())
-                .contentId(customer.getContentId())
+                .testContentId(testContents.getIdTestContents())
+                .testId(testContents.getTestsId())
+                .contentId(testContents.getContentId())
                 .testDTOResults(testResults)
                 .build();
     }
