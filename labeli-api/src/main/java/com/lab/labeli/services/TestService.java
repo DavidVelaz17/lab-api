@@ -10,6 +10,9 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -54,6 +57,18 @@ public class TestService {
         updateTestById.updateTestFunction(form);
         testRepository.save(updateTestById);
         return TestDTO.build(updateTestById);
+    }
 
+    public Map<Integer, TestDTO> getIdListByTest(final List<Integer> idTestParameter){
+        final List<Test> testList = testRepository.findAllById(idTestParameter);
+        return idListByTestDTO(testList);
+    }
+
+    private Map<Integer,TestDTO> idListByTestDTO(final List<Test> testInfo){
+        final List<TestDTO> TestContentsList=
+                testInfo.stream().map(TestDTO::build).toList();
+        return TestContentsList
+                .stream()
+                .collect(Collectors.toMap(TestDTO::getIdTest, Function.identity()));
     }
 }

@@ -1,22 +1,28 @@
 package com.lab.labeli.services;
 
 import com.lab.labeli.dto.CustomerTestDTO;
+import com.lab.labeli.dto.TestContentsDTO;
+import com.lab.labeli.dto.TestDTO;
 import com.lab.labeli.entity.CustomerTest;
+import com.lab.labeli.entity.TestContents;
 import com.lab.labeli.form.CustomerTestForm;
 import com.lab.labeli.repository.CustomerTestRepository;
+import com.lab.labeli.repository.TestContentsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
 @PropertySource("classpath*:ValidationsMessages.properties")
 public class CustomerTestService {
     private final CustomerTestRepository customerTestRepository;
-
+    private final TestContentsRepository testContentsRepository;
+    private final TestService testService;
     @Value("${not.found}")
     private String notFound;
 
@@ -24,6 +30,15 @@ public class CustomerTestService {
         if (!customerTestRepository.existsById(idCustomerTest)) {
             throw new Exception(notFound);
         }
+    }
+
+    private Map<Integer, TestDTO> getTestIdsMap(final List<Integer> contentsId) {
+        return testService.getIdListByTest(contentsId);
+    }
+    public List <TestContentsDTO> getAllTestContents(){
+        final List<TestContents> testContentsList= testContentsRepository.findAll();
+        final Map<Integer, TestDTO> contTestContentsListId = getTestIdsMap(testContentsList.stream().map(TestContents::getIdTestContents).toList());
+        return testContentsList.stream().map(resultAndContentResults -> TestContentsDTO.build(resultAndContentResults, contTestContentsListId.get(resultAndContentResults.getIdTestContents()))).toList();
     }
 
     public List<CustomerTestDTO> getAllCustomersTest() {
