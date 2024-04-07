@@ -21,7 +21,6 @@ import java.util.Map;
 @PropertySource("classpath*:ValidationsMessages.properties")
 public class CustomerTestService {
     private final CustomerTestRepository customerTestRepository;
-    private final TestContentsRepository testContentsRepository;
     private final TestService testService;
     @Value("${not.found}")
     private String notFound;
@@ -35,21 +34,18 @@ public class CustomerTestService {
     private Map<Integer, TestDTO> getTestIdsMap(final List<Integer> contentsId) {
         return testService.getIdListByTest(contentsId);
     }
-    public List <TestContentsDTO> getAllCustomerTest(){
-        final List<TestContents> testContentsList= testContentsRepository.findAll();
-        final Map<Integer, TestDTO> contTestContentsListId = getTestIdsMap(testContentsList.stream().map(TestContents::getIdTestContents).toList());
-        return testContentsList.stream().map(resultAndContentResults -> TestContentsDTO.build(resultAndContentResults, contTestContentsListId.get(resultAndContentResults.getIdTestContents()))).toList();
-    }
 
     public List<CustomerTestDTO> getAllCustomersTest() {
-        final List<CustomerTest> getAllCostumersTest = customerTestRepository.findAll();
-        return getAllCostumersTest.stream().map(CustomerTestDTO::build).toList();
+        final List<CustomerTest> getAllIdTest = customerTestRepository.findAll();
+        final Map<Integer, TestDTO> contTestContentsListId = getTestIdsMap(getAllIdTest.stream().map(CustomerTest::getIdTest).toList());
+        return getAllIdTest.stream().map(customersTest -> CustomerTestDTO.build(customersTest, contTestContentsListId.get(customersTest.getIdTest()))).toList();
 
     }
 
     public CustomerTestDTO getCustomerTestById(final int idCustomerTest) throws Exception {
         final CustomerTest customerTestById = customerTestRepository.findById(idCustomerTest).get();
-        return CustomerTestDTO.build(customerTestById);
+        final TestDTO testDTO = testService.getTestById(customerTestById.getIdTest());
+        return CustomerTestDTO.build(customerTestById, testDTO);
     }
 
     public CustomerTestDTO createCustomerTest(final CustomerTestForm form) {
