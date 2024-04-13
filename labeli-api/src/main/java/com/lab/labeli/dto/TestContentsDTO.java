@@ -15,11 +15,11 @@ public class TestContentsDTO {
     @ApiObjectField(name= "contentId", description = "Identifier container")
     private int contentId;
 
-    public static TestContentsDTO build(final TestContents customer){
+    public static TestContentsDTO build(final TestContents testContents){
         return TestContentsDTO.builder()
-                .testContentId(customer.getIdTestContents())
-                .testId(customer.getTestsId())
-                .contentId(customer.getContentId())
+                .testContentId(testContents.getIdTestContents())
+                .testId(testContents.getTestsId())
+                .contentId(testContents.getContentId())
                 .build();
     }
 }
