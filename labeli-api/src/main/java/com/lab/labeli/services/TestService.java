@@ -59,8 +59,8 @@ public class TestService {
         return TestDTO.build(updateTestById);
     }
 
-    public Map<Integer, TestDTO> getIdListByTest(final List<Integer> idTestParameter){
-        final List<Test> testList = testRepository.findAllById(idTestParameter);
+    public Map<Integer, TestDTO> getIdListByTest(final List<Integer> idTestService){
+        final List<Test> testList = testRepository.findAllById(idTestService);
         return idListByTestDTO(testList);
     }
 
