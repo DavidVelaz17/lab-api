@@ -1,6 +1,7 @@
 package com.lab.labeli.dto;
 
 import com.lab.labeli.entity.CustomerTest;
+import com.lab.labeli.entity.TestContents;
 import lombok.Builder;
 import lombok.Data;
 import org.jsondoc.core.annotation.ApiObjectField;
@@ -17,11 +18,24 @@ public class CustomerTestDTO {
     @ApiObjectField(name = "idTest", description = "Customer's ID")
     private int idTest;
 
+    @ApiObjectField(name= "testDTO", description = "Identifier test")
+    private TestDTO testDTO;
+
+
     public static CustomerTestDTO build(final CustomerTest customerTest) {
         return CustomerTestDTO.builder()
                 .idCustomersTests(customerTest.getIdCustomersTests())
                 .idCustomer(customerTest.getIdCustomersTests())
                 .idTest(customerTest.getIdTest())
+                .build();
+    }
+
+    public static CustomerTestDTO build(final CustomerTest customerTest, final TestDTO testDTO){
+        return CustomerTestDTO.builder()
+                .idCustomersTests(customerTest.getIdCustomersTests())
+                .idCustomer(customerTest.getIdCustomersTests())
+                .idTest(customerTest.getIdTest())
+                .testDTO(testDTO)
                 .build();
     }
 }
