@@ -1,22 +1,27 @@
 package com.lab.labeli.services;
 
 import com.lab.labeli.dto.CustomerTestDTO;
+import com.lab.labeli.dto.TestContentsDTO;
+import com.lab.labeli.dto.TestDTO;
 import com.lab.labeli.entity.CustomerTest;
+import com.lab.labeli.entity.TestContents;
 import com.lab.labeli.form.CustomerTestForm;
 import com.lab.labeli.repository.CustomerTestRepository;
+import com.lab.labeli.repository.TestContentsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
 @PropertySource("classpath*:ValidationsMessages.properties")
 public class CustomerTestService {
     private final CustomerTestRepository customerTestRepository;
-
+    private final TestService testService;
     @Value("${not.found}")
     private String notFound;
 
@@ -26,15 +31,21 @@ public class CustomerTestService {
         }
     }
 
+    private Map<Integer, TestDTO> getTestIdsMap(final List<Integer> contentsId) {
+        return testService.getIdListByTest(contentsId);
+    }
+
     public List<CustomerTestDTO> getAllCustomersTest() {
-        final List<CustomerTest> getAllCostumersTest = customerTestRepository.findAll();
-        return getAllCostumersTest.stream().map(CustomerTestDTO::build).toList();
+        final List<CustomerTest> getAllIdTest = customerTestRepository.findAll();
+        final Map<Integer, TestDTO> contTestContentsListId = getTestIdsMap(getAllIdTest.stream().map(CustomerTest::getIdTest).toList());
+        return getAllIdTest.stream().map(customersTest -> CustomerTestDTO.build(customersTest, contTestContentsListId.get(customersTest.getIdTest()))).toList();
 
     }
 
     public CustomerTestDTO getCustomerTestById(final int idCustomerTest) throws Exception {
         final CustomerTest customerTestById = customerTestRepository.findById(idCustomerTest).get();
-        return CustomerTestDTO.build(customerTestById);
+        final TestDTO testDTO = testService.getTestById(customerTestById.getIdTest());
+        return CustomerTestDTO.build(customerTestById, testDTO);
     }
 
     public CustomerTestDTO createCustomerTest(final CustomerTestForm form) {

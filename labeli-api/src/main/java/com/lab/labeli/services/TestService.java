@@ -59,7 +59,29 @@ public class TestService {
         updateTestById.updateTestFunction(form);
         testRepository.save(updateTestById);
         return TestDTO.build(updateTestById);
+    }
 
+    public Map<Integer, TestDTO> getIdListByTest(final List<Integer> idTestService){
+        final List<Test> testList = testRepository.findAllById(idTestService);
+        return idListByTestDTO(testList);
+    }
+
+    private Map<Integer,TestDTO> idListByTestDTO(final List<Test> testInfo){
+        final List<TestDTO> TestContentsList=
+                testInfo.stream().map(TestDTO::build).toList();
+        return TestContentsList
+                .stream()
+                .collect(Collectors.toMap(TestDTO::getIdTest, Function.identity()));
+    }
+
+    public Map<Integer, TestDTO> getTestsByIds(final List<Integer> testsIds) {
+        final List<Test> testDTOS = testRepository.findAllById(testsIds);
+        return testDTOs(testDTOS);
+    }
+
+    private Map<Integer, TestDTO> testDTOs(final List<Test> tests){
+        final List<TestDTO> testDTOS=tests.stream().map(TestDTO::build).toList();
+        return testDTOS.stream().collect(Collectors.toMap(TestDTO::getIdTest, Function.identity()));
     }
 
     public Map<Integer, TestDTO> getIdListByTest(final List<Integer> idtestService){
