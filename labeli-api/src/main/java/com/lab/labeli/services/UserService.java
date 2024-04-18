@@ -1,5 +1,6 @@
 package com.lab.labeli.services;
 
+import com.lab.labeli.dto.CustomerDTO;
 import com.lab.labeli.dto.UserDTO;
 import com.lab.labeli.entity.Customer;
 import com.lab.labeli.entity.User;
@@ -12,6 +13,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -81,5 +85,15 @@ public class UserService {
         if(!userRepository.existsById(idUser)){
             throw new Exception(notFound);
         }
+    }
+
+    public Map<Integer, UserDTO> getUsersByIds(final List<Integer> usersIds) {
+        final List<User> users = userRepository.findAllById(usersIds);
+        return usersDTOs(users);
+    }
+
+    private Map<Integer, UserDTO> usersDTOs(final List<User> users){
+        final List<UserDTO> userDTOs = users.stream().map(UserDTO::build).toList();
+        return userDTOs.stream().collect(Collectors.toMap(UserDTO::getIdUser, Function.identity()));
     }
 }

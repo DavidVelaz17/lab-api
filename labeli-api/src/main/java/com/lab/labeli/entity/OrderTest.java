@@ -23,13 +23,11 @@ public class OrderTest {
     private int idTest;
 
     public OrderTest(final OrderTestForm form) {
-        this.idOrderTest = form.getIdOrderTest();
         this.idOrder = form.getIdOrder();
         this.idTest = form.getIdTest();
     }
 
     public void updateOrderTestFunction(final OrderTestForm form) {
-        this.idOrderTest = form.getIdOrderTest();
         this.idOrder = form.getIdOrder();
         this.idTest = form.getIdTest();
     }

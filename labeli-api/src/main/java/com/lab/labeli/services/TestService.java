@@ -71,4 +71,14 @@ public class TestService {
                 .stream()
                 .collect(Collectors.toMap(TestDTO::getIdTest, Function.identity()));
     }
+
+    public Map<Integer, TestDTO> getTestsByIds(final List<Integer> testsIds) {
+        final List<Test> testDTOS = testRepository.findAllById(testsIds);
+        return testDTOs(testDTOS);
+    }
+
+    private Map<Integer, TestDTO> testDTOs(final List<Test> tests){
+        final List<TestDTO> testDTOS=tests.stream().map(TestDTO::build).toList();
+        return testDTOS.stream().collect(Collectors.toMap(TestDTO::getIdTest, Function.identity()));
+    }
 }

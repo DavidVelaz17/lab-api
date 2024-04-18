@@ -46,11 +46,7 @@ public class Order {
     }
 
     public void updateOrder(final OrderForm form){
-        this.idCustomers=form.getIdCustomers();
-        this.idUsers=form.getIdUsers();
-        this.orderTimeStamp=form.getOrderTimeStamp();
         this.orderDeposit=form.getOrderDeposit();
-        this.orderTotal= form.getOrderTotal();
         this.orderNotes=form.getOrderNotes();
     }
 

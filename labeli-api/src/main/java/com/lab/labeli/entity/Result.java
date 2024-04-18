@@ -38,9 +38,6 @@ public class Result {
     }
 
     public void updateResult(final ResultForm form){
-        this.idCustomers=form.getIdCustomers();
-        this.idTests=form.getIdTests();
-        this.resultTimeStamp=form.getResultTimeStamp();
         this.resultNote=form.getResultNote();
     }
 

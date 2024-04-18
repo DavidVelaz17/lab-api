@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OrderTestRepository extends JpaRepository<OrderTest, Integer> {
+    OrderTest findOrderTestByIdOrder(int idOrder);
 }
