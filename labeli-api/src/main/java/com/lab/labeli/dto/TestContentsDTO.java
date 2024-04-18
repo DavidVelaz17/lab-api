@@ -15,7 +15,7 @@ public class TestContentsDTO {
     @ApiObjectField(name= "contentId", description = "Identifier container")
     private int contentId;
 
-    @ApiObjectField(name= "test_DTO_Results", description = "Identifier test")
+    @ApiObjectField(name= "testDTOResults", description = "Identifier test")
     private TestDTO testDTOResults;
 
     public static TestContentsDTO build(final TestContents testContents){
@@ -26,7 +26,14 @@ public class TestContentsDTO {
                 .build();
     }
 
-
+    public static TestContentsDTO build(final TestContents testContents, final TestDTO testResults){
+        return TestContentsDTO.builder()
+                .testContentId(testContents.getIdTestContents())
+                .testId(testContents.getTestsId())
+                .contentId(testContents.getContentId())
+                .testDTOResults(testResults)
+                .build();
+    }
 }
 
 

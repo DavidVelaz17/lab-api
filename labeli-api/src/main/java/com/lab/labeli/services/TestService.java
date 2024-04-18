@@ -1,7 +1,9 @@
 package com.lab.labeli.services;
 
+import com.lab.labeli.dto.TestContentsDTO;
 import com.lab.labeli.dto.TestDTO;
 import com.lab.labeli.entity.Test;
+import com.lab.labeli.entity.TestContents;
 import com.lab.labeli.form.TestForm;
 import com.lab.labeli.repository.TestRepository;
 import lombok.RequiredArgsConstructor;
@@ -10,8 +12,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 import java.util.function.Function;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -80,5 +82,18 @@ public class TestService {
     private Map<Integer, TestDTO> testDTOs(final List<Test> tests){
         final List<TestDTO> testDTOS=tests.stream().map(TestDTO::build).toList();
         return testDTOS.stream().collect(Collectors.toMap(TestDTO::getIdTest, Function.identity()));
+    }
+
+    public Map<Integer, TestDTO> getIdListByTest(final List<Integer> idtestService){
+        final List<Test> testList = testRepository.findAllById(idtestService);
+        return idListByTestDTO(testList);
+    }
+
+    private Map<Integer,TestDTO> idListByTestDTO(final List<Test> testInfo){
+        final List<TestDTO> TestContentsList=
+                testInfo.stream().map(TestDTO::build).toList();
+        return TestContentsList
+                .stream()
+                .collect(Collectors.toMap(TestDTO::getIdTest, Function.identity()));
     }
 }
