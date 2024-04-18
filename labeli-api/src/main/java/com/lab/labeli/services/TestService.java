@@ -63,20 +63,7 @@ public class TestService {
 
     public Map<Integer, TestDTO> getIdListByTest(final List<Integer> idTestService){
         final List<Test> testList = testRepository.findAllById(idTestService);
-        return idListByTestDTO(testList);
-    }
-
-    private Map<Integer,TestDTO> idListByTestDTO(final List<Test> testInfo){
-        final List<TestDTO> TestContentsList=
-                testInfo.stream().map(TestDTO::build).toList();
-        return TestContentsList
-                .stream()
-                .collect(Collectors.toMap(TestDTO::getIdTest, Function.identity()));
-    }
-
-    public Map<Integer, TestDTO> getTestsByIds(final List<Integer> testsIds) {
-        final List<Test> testDTOS = testRepository.findAllById(testsIds);
-        return testDTOs(testDTOS);
+        return testDTOs(testList);
     }
 
     private Map<Integer, TestDTO> testDTOs(final List<Test> tests){
@@ -84,16 +71,5 @@ public class TestService {
         return testDTOS.stream().collect(Collectors.toMap(TestDTO::getIdTest, Function.identity()));
     }
 
-    public Map<Integer, TestDTO> getIdListByTest(final List<Integer> idtestService){
-        final List<Test> testList = testRepository.findAllById(idtestService);
-        return idListByTestDTO(testList);
-    }
-
-    private Map<Integer,TestDTO> idListByTestDTO(final List<Test> testInfo){
-        final List<TestDTO> TestContentsList=
-                testInfo.stream().map(TestDTO::build).toList();
-        return TestContentsList
-                .stream()
-                .collect(Collectors.toMap(TestDTO::getIdTest, Function.identity()));
     }
 }
