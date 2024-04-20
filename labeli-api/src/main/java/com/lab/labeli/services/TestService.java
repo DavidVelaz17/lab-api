@@ -70,6 +70,4 @@ public class TestService {
         final List<TestDTO> testDTOS=tests.stream().map(TestDTO::build).toList();
         return testDTOS.stream().collect(Collectors.toMap(TestDTO::getIdTest, Function.identity()));
     }
-
-    }
 }
