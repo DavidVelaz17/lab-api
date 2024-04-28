@@ -29,9 +29,6 @@ public class CustomerDTO {
     @ApiObjectField(name = "dateOfBirth", description = "Customer's ID")
     private LocalDate dateOfBirth;
 
-    @ApiObjectField(name = "status", description = "Customer's ID")
-    private Status status;
-
     @ApiObjectField(name= "doctorName", description = "Doctor's name")
     private String doctorName;
 
@@ -43,7 +40,6 @@ public class CustomerDTO {
                 .dateOfBirth(customer.getDateOfBirth())
                 .phoneNumber(customer.getPhoneNumber())
                 .address(customer.getAddress())
-                .status(customer.getStatus())
                 .doctorName(customer.getDoctorName())
                 .build();
     }

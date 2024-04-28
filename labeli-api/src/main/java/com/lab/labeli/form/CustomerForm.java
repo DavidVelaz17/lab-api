@@ -31,10 +31,6 @@ public class CustomerForm implements Serializable {
     @ApiObjectField(name = "dateOfBirth", description = "Customer's birthday", required = true)
     private LocalDate dateOfBirth;
 
-    @ApiObjectField(name= "status", description = "Customer's status")
-    @Size (max = 2,message = "{right.length}")
-    private Status status;
-
     @ApiObjectField(name= "doctorName", description = "Doctor's name")
     @Size (max = 100,message = "{right.length}")
     private String doctorName;

@@ -42,6 +42,12 @@ public class CustomerTestService {
 
     }
 
+    public CustomerTestDTO getCustomerTestByCustomerId(final int idCustomer) throws Exception {
+        final CustomerTest customerTest= customerTestRepository.findByIdCustomers(idCustomer);
+        final TestDTO testDTO = testService.getTestById(customerTest.getIdTest());
+        return CustomerTestDTO.build(customerTest, testDTO);
+    }
+
     public CustomerTestDTO getCustomerTestById(final int idCustomerTest) throws Exception {
         final CustomerTest customerTestById = customerTestRepository.findById(idCustomerTest).get();
         final TestDTO testDTO = testService.getTestById(customerTestById.getIdTest());

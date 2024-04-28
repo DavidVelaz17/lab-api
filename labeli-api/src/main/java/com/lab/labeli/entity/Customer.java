@@ -34,10 +34,6 @@ public class Customer {
     @Column(name = "customer_date_of_birth", nullable = false)
     private LocalDate dateOfBirth;
 
-    @Column(name = "customer_status", nullable = false)
-    @Convert(converter = StatusConvertor.class)
-    private Status status;
-
     @Column(name = "customer_doctor_name", nullable = false)
     private String doctorName;
 
@@ -48,7 +44,6 @@ public class Customer {
         this.phoneNumber=form.getPhoneNumber();
         this.address=form.getAddress();
         this.dateOfBirth=form.getDateOfBirth();
-        this.status=form.getStatus();
         this.doctorName=form.getDoctorName();
     }
 
@@ -58,7 +53,6 @@ public class Customer {
         this.phoneNumber=form.getPhoneNumber();
         this.address=form.getAddress();
         this.dateOfBirth=form.getDateOfBirth();
-        this.status=form.getStatus();
         this.doctorName=form.getDoctorName();
     }
 }

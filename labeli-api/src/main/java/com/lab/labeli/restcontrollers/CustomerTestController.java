@@ -23,6 +23,12 @@ public class CustomerTestController {
         return ResponseEntity.ok().body(cusrtomerTestList);
     }
 
+    @GetMapping(path = "/customer/{customerId}")
+    public ResponseEntity<CustomerTestDTO> getCustomerTestByCustomerId(@PathVariable("customerId") final int customerId) throws Exception {
+        final CustomerTestDTO getCustomerTest = customerTestService.getCustomerTestById(customerId);
+        return ResponseEntity.ok().body(getCustomerTest);
+    }
+
     @GetMapping(path = "/{customerTestId}")
     public ResponseEntity<CustomerTestDTO> getCustomerTestById(@PathVariable("customerTestId") final int customerTestId) throws Exception {
         final CustomerTestDTO getCustomerTest = customerTestService.getCustomerTestById(customerTestId);
