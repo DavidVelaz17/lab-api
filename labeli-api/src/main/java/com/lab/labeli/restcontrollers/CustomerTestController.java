@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(path = "/alb/customertest")
+@RequestMapping(path = "/lab/customertest")
 public class CustomerTestController {
     private final CustomerTestService customerTestService;
 

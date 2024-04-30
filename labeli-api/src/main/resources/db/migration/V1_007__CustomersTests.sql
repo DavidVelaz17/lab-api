@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `customers_tests` (
-    `idcustomers_tests` INT NOT NULL,
+    `idcustomers_tests` INT NOT NULL AUTO_INCREMENT,
     `idcustomers` INT NULL,
     `idtests` INT NULL,
     `test_status` SMALLINT(2) NOT NULL,
