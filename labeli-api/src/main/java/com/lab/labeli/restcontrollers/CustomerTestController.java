@@ -24,8 +24,8 @@ public class CustomerTestController {
     }
 
     @GetMapping(path = "/customer/{customerId}")
-    public ResponseEntity<CustomerTestDTO> getCustomerTestByCustomerId(@PathVariable("customerId") final int customerId) throws Exception {
-        final CustomerTestDTO getCustomerTest = customerTestService.getCustomerTestById(customerId);
+    public ResponseEntity<List<CustomerTestDTO>> getCustomerTestByCustomerId(@PathVariable("customerId") final int customerId) throws Exception {
+        final List<CustomerTestDTO> getCustomerTest = customerTestService.getCustomerTestByCustomerId(customerId);
         return ResponseEntity.ok().body(getCustomerTest);
     }
 

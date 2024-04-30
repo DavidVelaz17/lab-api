@@ -42,10 +42,12 @@ public class CustomerTestService {
 
     }
 
-    public CustomerTestDTO getCustomerTestByCustomerId(final int idCustomer) throws Exception {
-        final CustomerTest customerTest= customerTestRepository.findByIdCustomers(idCustomer);
-        final TestDTO testDTO = testService.getTestById(customerTest.getIdTest());
-        return CustomerTestDTO.build(customerTest, testDTO);
+    public List<CustomerTestDTO> getCustomerTestByCustomerId(final int idCustomer) throws Exception {
+
+        final List<CustomerTest> getAllIdTest = customerTestRepository.findAllByIdCustomers(idCustomer);
+        final Map<Integer, TestDTO> contTestContentsListId = getTestIdsMap(getAllIdTest.stream().map(CustomerTest::getIdTest).toList());
+        return getAllIdTest.stream().map(customersTest -> CustomerTestDTO.build(customersTest, contTestContentsListId.get(customersTest.getIdTest()))).toList();
+
     }
 
     public CustomerTestDTO getCustomerTestById(final int idCustomerTest) throws Exception {
