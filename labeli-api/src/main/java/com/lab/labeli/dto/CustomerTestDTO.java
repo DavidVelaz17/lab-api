@@ -28,7 +28,7 @@ public class CustomerTestDTO {
     public static CustomerTestDTO build(final CustomerTest customerTest) {
         return CustomerTestDTO.builder()
                 .idCustomersTests(customerTest.getIdCustomersTests())
-                .idCustomer(customerTest.getIdCustomersTests())
+                .idCustomer(customerTest.getIdCustomers())
                 .idTest(customerTest.getIdTest())
                 .status(customerTest.getStatus())
                 .build();
@@ -37,7 +37,7 @@ public class CustomerTestDTO {
     public static CustomerTestDTO build(final CustomerTest customerTest, final TestDTO testDTO){
         return CustomerTestDTO.builder()
                 .idCustomersTests(customerTest.getIdCustomersTests())
-                .idCustomer(customerTest.getIdCustomersTests())
+                .idCustomer(customerTest.getIdCustomers())
                 .idTest(customerTest.getIdTest())
                 .testDTO(testDTO)
                 .status(customerTest.getStatus())
