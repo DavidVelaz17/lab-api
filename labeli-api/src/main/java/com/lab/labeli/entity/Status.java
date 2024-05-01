@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 @Getter
 @RequiredArgsConstructor
 public enum Status {
-    Reported(0),Pending(1),Delivered(2);
+    Reportado(0),Impreso(1),Entregado(2);
     private final int key;
     public static Status getStatus(Integer key){
         Map<Integer, Status> statusMap =
