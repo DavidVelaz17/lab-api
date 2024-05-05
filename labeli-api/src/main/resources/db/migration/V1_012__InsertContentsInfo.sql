@@ -108,6 +108,7 @@ INSERT INTO contents (`content_id`, `content_name`) VALUES ('4127', 'PROTEINAS')
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4128', 'MICROALBUMINA');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4129', 'CETONAS');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4130', 'BILIRRUBINAS');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4131', 'NITRITOS');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4132', 'UROBILINOGENO');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4133', 'SANGRE');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4134', 'CELULAS DEL EPITELIO ESCAMOSO (uretra, vagina)');
@@ -182,7 +183,7 @@ INSERT INTO contents (`content_id`, `content_name`) VALUES ('6007', 'TGP  (Alani
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('6009', 'Albumina');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('6010', 'Globulina');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('6011', 'Relacion Albumina Globulina');
-INSERT INTO contents (`content_id`, `content_name`) VALUES ('6012', 'Bilirrubina Total');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('6012', 'Bilirribina Total');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('6013', 'Bilirrubina Directa');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('6014', 'Bilirrubina Indirecta');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('6015', 'DHL (Deshidrogenasa lactica)');
