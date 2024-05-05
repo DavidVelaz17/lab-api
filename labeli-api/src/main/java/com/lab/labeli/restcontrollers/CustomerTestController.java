@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(path = "/alb/customertest")
+@RequestMapping(path = "/lab/customertest")
 public class CustomerTestController {
     private final CustomerTestService customerTestService;
 
@@ -21,6 +21,12 @@ public class CustomerTestController {
     public ResponseEntity<List<CustomerTestDTO>> getAllCustomerTestsList() {
         final List<CustomerTestDTO> cusrtomerTestList = customerTestService.getAllCustomersTest();
         return ResponseEntity.ok().body(cusrtomerTestList);
+    }
+
+    @GetMapping(path = "/customer/{customerId}")
+    public ResponseEntity<List<CustomerTestDTO>> getCustomerTestByCustomerId(@PathVariable("customerId") final int customerId) throws Exception {
+        final List<CustomerTestDTO> getCustomerTest = customerTestService.getCustomerTestByCustomerId(customerId);
+        return ResponseEntity.ok().body(getCustomerTest);
     }
 
     @GetMapping(path = "/{customerTestId}")

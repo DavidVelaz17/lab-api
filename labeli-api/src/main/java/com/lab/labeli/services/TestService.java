@@ -61,13 +61,13 @@ public class TestService {
         return TestDTO.build(updateTestById);
     }
 
-    public Map<Integer, TestDTO> getIdListByTest(final List<Integer> idTestService){
+    public Map<Integer, TestDTO> getIdListByTest(final List<Integer> idTestService) {
         final List<Test> testList = testRepository.findAllById(idTestService);
         return testDTOs(testList);
     }
 
-    private Map<Integer, TestDTO> testDTOs(final List<Test> tests){
-        final List<TestDTO> testDTOS=tests.stream().map(TestDTO::build).toList();
+    private Map<Integer, TestDTO> testDTOs(final List<Test> tests) {
+        final List<TestDTO> testDTOS = tests.stream().map(TestDTO::build).toList();
         return testDTOS.stream().collect(Collectors.toMap(TestDTO::getIdTest, Function.identity()));
     }
 }
