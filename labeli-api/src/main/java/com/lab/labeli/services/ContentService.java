@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -58,6 +61,16 @@ public class ContentService {
         if(!contentRepository.existsById(idContents)){
             throw new Exception(notFound);
         }
+    }
+
+    public Map<Integer, ContentsDTO> getIdListByContents(final List<Integer> idContentsService){
+        final List<Contents> contentsList = contentRepository.findAllById(idContentsService);
+        return contentsDTOs(contentsList);
+    }
+
+    private Map<Integer, ContentsDTO> contentsDTOs(final List<Contents> contentsBody){
+        final List<ContentsDTO> contentsDtoInfo = contentsBody.stream().map(ContentsDTO::build).toList();
+        return contentsDtoInfo.stream().collect(Collectors.toMap(ContentsDTO::getContentId, Function.identity()));
     }
 
 }
