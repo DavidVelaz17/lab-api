@@ -29,6 +29,12 @@ public class ResultController {
         return ResponseEntity.ok().body(resultDTO);
     }
 
+    @GetMapping(path = "/customer/{customerId}")
+    public ResponseEntity<List<ResultDTO>> getResultsByCustomerId(@PathVariable("customerId") final int customerId) throws Exception {
+        final List<ResultDTO> resultsList = resultService.getResultsByIdCustomer(customerId);
+        return ResponseEntity.ok().body(resultsList);
+    }
+
     @PostMapping
     public ResponseEntity<ResultDTO> saveResult(@RequestBody @Valid final ResultForm form){
         final ResultDTO resultDTO = resultService.createResult(form);

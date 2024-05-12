@@ -40,6 +40,17 @@ public class ResultService {
                 .toList();
     }
 
+    public List<ResultDTO> getResultsByIdCustomer(final int idCustomer)throws Exception{
+        final List<Result> getAllResultsByIdCustomer = resultRepository.findAllByIdCustomers(idCustomer);
+        final Map<Integer, ContentsResultsDTO> contResultsListId = getContentsResultsIdsMap(getAllResultsByIdCustomer.stream().map(Result::getIdResults).toList());
+        return getAllResultsByIdCustomer
+                .stream()
+                .map(resultAndContentResults -> ResultDTO.build(
+                        resultAndContentResults, contResultsListId.get(resultAndContentResults.getIdResults())
+                ))
+                .toList();
+    }
+
     public ResultDTO getResultById(final int idResult) throws Exception {
         validateIfResultExists(idResult);
         final Result resultBodyInfo = resultRepository.findById(idResult).get();
