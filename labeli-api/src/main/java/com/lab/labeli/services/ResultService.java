@@ -83,4 +83,8 @@ public class ResultService {
             throw new Exception(notFound);
         }
     }
+
+    public void deleteResultByIdTest(final int idTest) throws Exception {
+        resultRepository.deleteByIdTests(idTest);
+    }
 }

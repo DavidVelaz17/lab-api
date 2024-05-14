@@ -53,4 +53,10 @@ public class ResultController {
         return ResponseEntity.ok().body(resultDTO);
     }
 
+    @DeleteMapping(path = "/test/delete/{idTest}")
+    public ResponseEntity<ResultDTO> deleteResultByIdTest(@PathVariable("idTest") final int idTest) throws Exception {
+        resultService.deleteResultByIdTest(idTest);
+        return ResponseEntity.ok().build();
+    }
+
 }
