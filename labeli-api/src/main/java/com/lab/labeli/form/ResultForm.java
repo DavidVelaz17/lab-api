@@ -22,8 +22,4 @@ public class ResultForm implements Serializable {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @ApiObjectField(name= "resultTimeStamp", description = "Result's Time Stamp")
     private LocalDate resultTimeStamp;
-
-    @ApiObjectField(name= "resultNote", description = "Result's Notes")
-    @Size(max = 100,message = "{right.length}")
-    private String resultNote;
 }
