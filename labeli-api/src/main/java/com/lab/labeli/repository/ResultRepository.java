@@ -10,6 +10,7 @@ import java.util.List;
 @Repository
 public interface ResultRepository extends JpaRepository<Result, Integer> {
     List<Result> findAllByIdCustomers(Integer customerId);
+
     @Transactional
-    void deleteByIdTests(Integer testId);
+    void deleteByIdTestsAndIdCustomers(Integer idtests, Integer idcustomer);
 }

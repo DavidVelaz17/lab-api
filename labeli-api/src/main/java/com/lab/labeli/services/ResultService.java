@@ -40,7 +40,7 @@ public class ResultService {
                 .toList();
     }
 
-    public List<ResultDTO> getResultsByIdCustomer(final int idCustomer)throws Exception{
+    public List<ResultDTO> getResultsByIdCustomer(final int idCustomer) throws Exception {
         final List<Result> getAllResultsByIdCustomer = resultRepository.findAllByIdCustomers(idCustomer);
         final Map<Integer, ContentsResultsDTO> contResultsListId = getContentsResultsIdsMap(getAllResultsByIdCustomer.stream().map(Result::getIdResults).toList());
         return getAllResultsByIdCustomer
@@ -84,7 +84,7 @@ public class ResultService {
         }
     }
 
-    public void deleteResultByIdTest(final int idTest) throws Exception {
-        resultRepository.deleteByIdTests(idTest);
+    public void deleteResultByIdTestAndIdCustomer(final int idTest, final int idCustomer) throws Exception {
+        resultRepository.deleteByIdTestsAndIdCustomers(idTest, idCustomer);
     }
 }
