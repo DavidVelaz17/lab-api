@@ -24,8 +24,8 @@ public class ResultDTO {
     @ApiObjectField(name = "resultNote", description = "Result's Notes")
     private String resultNote;
 
-    @ApiObjectField(name = "contentResult", description = "ContentResult's data")
-    private ContentsResultsDTO contentsResultsInfo;
+//    @ApiObjectField(name= "testDTOResults", description = "Identifier test")
+//    private ContentsResultsDTO contentsResultsDTO;
 
     public static ResultDTO build(final Result result) {
         return ResultDTO.builder()
@@ -44,7 +44,7 @@ public class ResultDTO {
                 .idTests(result.getIdTests())
                 .resultTimeStamp(result.getResultTimeStamp())
                 .resultNote(result.getResultNote())
-                .contentsResultsInfo(contResults)
+//                .contentsResultsDTO(contResults)
                 .build();
     }
 }
