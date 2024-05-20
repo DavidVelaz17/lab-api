@@ -58,4 +58,10 @@ public class ResultController {
         resultService.deleteResultByIdTestAndIdCustomer(idTest, idCustomer);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping(path = "/customer/{idTest}/{idCustomer}")
+    public ResponseEntity<List<ResultDTO>> getResultsByIdTestAndIdCustomer(@PathVariable("idTest") final int idTest,@PathVariable("idCustomer") final int idCustomer) throws Exception {
+        final List<ResultDTO> resultsList = resultService.getResultByIdTestsAndIdCustomers(idTest,idCustomer);
+        return ResponseEntity.ok().body(resultsList);
+    }
 }

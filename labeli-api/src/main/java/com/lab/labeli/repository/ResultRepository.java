@@ -13,4 +13,6 @@ public interface ResultRepository extends JpaRepository<Result, Integer> {
 
     @Transactional
     void deleteByIdTestsAndIdCustomers(Integer idtests, Integer idcustomer);
+
+    List<Result> findAllByIdTestsAndIdCustomers(Integer idtest, Integer idcustomer);
 }

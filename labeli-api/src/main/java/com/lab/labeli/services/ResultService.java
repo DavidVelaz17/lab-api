@@ -87,4 +87,15 @@ public class ResultService {
     public void deleteResultByIdTestAndIdCustomer(final int idTest, final int idCustomer) throws Exception {
         resultRepository.deleteByIdTestsAndIdCustomers(idTest, idCustomer);
     }
+
+    public List<ResultDTO> getResultByIdTestsAndIdCustomers(final int idCustomer, final int idTest) throws Exception {
+        final List<Result> getAllResultsByIdCustomerAndIdTest = resultRepository.findAllByIdTestsAndIdCustomers(idCustomer,idTest);
+        final Map<Integer, ContentsResultsDTO> contResultsListId = getContentsResultsIdsMap(getAllResultsByIdCustomerAndIdTest.stream().map(Result::getIdResults).toList());
+        return getAllResultsByIdCustomerAndIdTest
+                .stream()
+                .map(resultAndContentResults -> ResultDTO.build(
+                        resultAndContentResults, contResultsListId.get(resultAndContentResults.getIdResults())
+                ))
+                .toList();
+    }
 }
