@@ -19,14 +19,14 @@ public class ContentsResultsDTO {
 
     @ApiObjectField(name= "resultValue", description = "Result value")
     @Size(max = 100,message = "{right.length}")
-    private String resValue;
+    private String resultValue;
 
     public static ContentsResultsDTO build(final ContentsResults content){
         return ContentsResultsDTO.builder()
                 .contResultId(content.getContentResultId())
                 .resultId(content.getResultId())
                 .contentId(content.getContentId())
-                .resValue(content.getResultValue())
+                .resultValue(content.getResultValue())
                 .build();
     }
 }
