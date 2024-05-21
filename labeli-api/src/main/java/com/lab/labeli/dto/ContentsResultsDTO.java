@@ -15,7 +15,7 @@ public class ContentsResultsDTO {
     private int resultId;
 
     @ApiObjectField(name= "contentId", description = "Content Ids")
-    private int contId;
+    private int contentId;
 
     @ApiObjectField(name= "resultValue", description = "Result value")
     @Size(max = 100,message = "{right.length}")
@@ -25,7 +25,7 @@ public class ContentsResultsDTO {
         return ContentsResultsDTO.builder()
                 .contResultId(content.getContentResultId())
                 .resultId(content.getResultId())
-                .contId(content.getContentId())
+                .contentId(content.getContentId())
                 .resValue(content.getResultValue())
                 .build();
     }
