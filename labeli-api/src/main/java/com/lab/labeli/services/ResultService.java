@@ -31,13 +31,7 @@ public class ResultService {
 
     public List<ResultDTO> getAllResult() {
         final List<Result> resultsList = resultRepository.findAll();
-        final Map<Integer, ContentsResultsDTO> contResultsListId = getContentsResultsIdsMap(resultsList.stream().map(Result::getIdResults).toList());
-        return resultsList
-                .stream()
-                .map(resultAndContentResults -> ResultDTO.build(
-                        resultAndContentResults, contResultsListId.get(resultAndContentResults.getIdResults())
-                ))
-                .toList();
+        return resultsList.stream().map(ResultDTO::build).toList();
     }
 
     public List<ResultDTO> getResultsByIdCustomer(final int idCustomer) throws Exception {
@@ -89,7 +83,7 @@ public class ResultService {
     }
 
     public List<ResultDTO> getResultByIdTestsAndIdCustomers(final int idCustomer, final int idTest) throws Exception {
-        final List<Result> getAllResultsByIdCustomerAndIdTest = resultRepository.findAllByIdTestsAndIdCustomers(idCustomer,idTest);
+        final List<Result> getAllResultsByIdCustomerAndIdTest = resultRepository.findAllByIdTestsAndIdCustomers(idCustomer, idTest);
         final Map<Integer, ContentsResultsDTO> contResultsListId = getContentsResultsIdsMap(getAllResultsByIdCustomerAndIdTest.stream().map(Result::getIdResults).toList());
         return getAllResultsByIdCustomerAndIdTest
                 .stream()
