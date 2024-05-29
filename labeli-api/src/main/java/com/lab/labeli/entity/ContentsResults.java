@@ -1,4 +1,5 @@
 package com.lab.labeli.entity;
+
 import com.lab.labeli.form.ContentsResultsForm;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -12,31 +13,29 @@ import lombok.NoArgsConstructor;
 public class ContentsResults {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "content_result_id",nullable = false,unique = true)
+    @Column(name = "content_result_id", nullable = false, unique = true)
     private int contentResultId;
 
-    @Column(name = "result_id",nullable = false)
+    @Column(name = "result_id", nullable = false)
     private int resultId;
 
-    @Column(name = "content_id",nullable = false)
+    @Column(name = "content_id", nullable = false)
     private int contentId;
 
-    @Column(name = "result_value",nullable = false)
+    @Column(name = "result_value", nullable = false)
     private String resultValue;
 
-    public ContentsResults(final ContentsResultsForm form){
+    public ContentsResults(final ContentsResultsForm form) {
+        //This line was commented to update a testContent and only make use of resultValue
+        this.resultId = form.getResultId();
+        this.contentId = form.getContentId();
+        this.resultValue = form.getResultValue();
+    }
+
+    public void updateContentsResults(final ContentsResultsForm form) {
         //This line was commented to update a testContent and only make use of resultValue
         //this.resultId=form.getResultId();
         //this.contentId=form.getContentId();
-        this.resultValue=form.getResultValue();
+        this.resultValue = form.getResultValue();
     }
-
-    public void updateContentsResults(final ContentsResultsForm form){
-        //This line was commented to update a testContent and only make use of resultValue
-        //this.resultId=form.getResultId();
-        //this.contentId=form.getContentId();
-        this.resultValue=form.getResultValue();
-    }
-
-
 }
