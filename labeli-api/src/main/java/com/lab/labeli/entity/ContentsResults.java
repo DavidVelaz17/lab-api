@@ -25,14 +25,16 @@ public class ContentsResults {
     private String resultValue;
 
     public ContentsResults(final ContentsResultsForm form){
-        this.resultId=form.getResultId();
-        this.contentId=form.getContentId();
+        //This line was commented to update a testContent and only make use of resultValue
+        //this.resultId=form.getResultId();
+        //this.contentId=form.getContentId();
         this.resultValue=form.getResultValue();
     }
 
     public void updateContentsResults(final ContentsResultsForm form){
-        this.resultId=form.getResultId();
-        this.contentId=form.getContentId();
+        //This line was commented to update a testContent and only make use of resultValue
+        //this.resultId=form.getResultId();
+        //this.contentId=form.getContentId();
         this.resultValue=form.getResultValue();
     }
 
