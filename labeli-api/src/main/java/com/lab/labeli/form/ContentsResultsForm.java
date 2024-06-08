@@ -11,6 +11,8 @@ import java.time.LocalDate;
 
 @Data
 public class ContentsResultsForm implements Serializable {
+
+    //This line was commented to update a testContent and only make use of resultValue
     @ApiObjectField(name= "resultId", description = "Result Id")
     private int resultId;
 

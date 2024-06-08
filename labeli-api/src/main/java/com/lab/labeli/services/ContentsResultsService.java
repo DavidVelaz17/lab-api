@@ -1,6 +1,10 @@
 package com.lab.labeli.services;
+
+import com.lab.labeli.dto.ContentsDTO;
 import com.lab.labeli.dto.ContentsResultsDTO;
+import com.lab.labeli.dto.ResultDTO;
 import com.lab.labeli.entity.ContentsResults;
+import com.lab.labeli.entity.Result;
 import com.lab.labeli.form.ContentsResultsForm;
 import com.lab.labeli.repository.ContentsResultsRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +23,8 @@ import java.util.stream.Collectors;
 public class ContentsResultsService {
 
     private final ContentsResultsRepository contentsResultsRepository;
+    private final ContentService contentService;
+
     @Value("${not.found}")
     private String notFound;
 
@@ -34,13 +40,23 @@ public class ContentsResultsService {
         return ContentsResultsDTO.build(contentsResults);
     }
 
-    public Map<Integer, ContentsResultsDTO> getIdListByContentResults(final List<Integer> idContentsResult){
+    private Map<Integer, ContentsDTO> getContentsIdsMap(final List<Integer> contentsId) {
+        return contentService.getIdListByContents(contentsId);
+    }
+
+    public List<ContentsResultsDTO> getContentsResultsByResultId(final int resultId) throws Exception {
+        final List<ContentsResults> listByResultId = contentsResultsRepository.findAllByResultId(resultId);
+        final Map<Integer, ContentsDTO> contentsList = getContentsIdsMap(listByResultId.stream().map(ContentsResults::getContentId).toList());
+        return listByResultId.stream().map(contentsBody -> ContentsResultsDTO.build(contentsBody, contentsList.get(contentsBody.getContentId()))).toList();
+    }
+
+    public Map<Integer, ContentsResultsDTO> getIdListByContentResults(final List<Integer> idContentsResult) {
         final List<ContentsResults> idList = contentsResultsRepository.findAllById(idContentsResult);
         return idLIstByContentResultsDTO(idList);
     }
 
-    private Map<Integer,ContentsResultsDTO> idLIstByContentResultsDTO(final List<ContentsResults> contentsResultsInfo){
-        final List<ContentsResultsDTO> ContentsResultsDTOS=
+    private Map<Integer, ContentsResultsDTO> idLIstByContentResultsDTO(final List<ContentsResults> contentsResultsInfo) {
+        final List<ContentsResultsDTO> ContentsResultsDTOS =
                 contentsResultsInfo.stream().map(ContentsResultsDTO::build).toList();
         return ContentsResultsDTOS
                 .stream()
@@ -68,8 +84,8 @@ public class ContentsResultsService {
 
     }
 
-    private void validateIfContentsResultsExists(final int idContentsResults) throws Exception{
-        if(!contentsResultsRepository.existsById(idContentsResults)){
+    private void validateIfContentsResultsExists(final int idContentsResults) throws Exception {
+        if (!contentsResultsRepository.existsById(idContentsResults)) {
             throw new Exception(notFound);
         }
     }
