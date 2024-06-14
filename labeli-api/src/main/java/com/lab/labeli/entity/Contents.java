@@ -18,7 +18,7 @@ public class Contents {
     @Column(name = "content_name",nullable = false)
     private String contentName;
 
-    @Column(name = "ontent_units",nullable = true)
+    @Column(name = "content_units",nullable = true)
     private String contentUnits;
 
     public Contents(final ContentsForm form){

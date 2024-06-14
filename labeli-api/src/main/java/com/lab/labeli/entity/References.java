@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
-@Table(name="references")
+@Table(name="reference")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class References {
     @Id

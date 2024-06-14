@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `references` (
+CREATE TABLE IF NOT EXISTS `reference` (
     `idreferences` INT NOT NULL AUTO_INCREMENT,
     `content_id` INT NOT NULL,
     `v_ref_text` VARCHAR(500) NULL,

@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Getter;
 import org.jsondoc.core.annotation.ApiObjectField;
 
+import java.util.List;
+
 @Getter
 @Builder
 public class ContentsDTO {
@@ -18,7 +20,7 @@ public class ContentsDTO {
     private String units;
 
     @ApiObjectField(name= "referencesDTO", description = "Reference's DTO")
-    private ReferencesDTO referencesDTO;
+    private List<ReferencesDTO> referencesDTO;
 
     public static ContentsDTO build(final Contents content){
         return ContentsDTO.builder()
@@ -28,7 +30,7 @@ public class ContentsDTO {
                 .build();
     }
 
-    public static ContentsDTO build(final Contents content, final ReferencesDTO references){
+    public static ContentsDTO build(final Contents content, final List<ReferencesDTO> references){
         return ContentsDTO.builder()
                 .contentId(content.getContentId())
                 .name(content.getContentName())
