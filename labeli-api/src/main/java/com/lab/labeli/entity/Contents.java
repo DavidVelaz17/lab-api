@@ -18,12 +18,17 @@ public class Contents {
     @Column(name = "content_name",nullable = false)
     private String contentName;
 
+    @Column(name = "ontent_units",nullable = true)
+    private String contentUnits;
+
     public Contents(final ContentsForm form){
         this.contentName=form.getName();
+        this.contentUnits=form.getUnits();
     }
 
     public void updateContents(final ContentsForm form){
         this.contentName=form.getName();
+        this.contentUnits= form.getUnits();
     }
 
 }

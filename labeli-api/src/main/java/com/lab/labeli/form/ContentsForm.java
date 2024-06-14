@@ -10,7 +10,11 @@ import java.time.LocalDate;
 
 @Data
 public class ContentsForm implements Serializable {
-    @ApiObjectField(name= "name", description = "Contents's name")
+    @ApiObjectField(name= "name", description = "Content's name")
     @Size (max = 100,message = "{right.length}")
     private String name;
+
+    @ApiObjectField(name= "units", description = "Contents units")
+    @Size (max = 50,message = "{right.length}")
+    private String units;
 }
