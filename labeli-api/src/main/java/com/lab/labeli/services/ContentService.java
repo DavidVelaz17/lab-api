@@ -1,17 +1,16 @@
 package com.lab.labeli.services;
 
 import com.lab.labeli.dto.ContentsDTO;
+import com.lab.labeli.dto.ReferencesDTO;
 import com.lab.labeli.entity.Contents;
+import com.lab.labeli.entity.References;
 import com.lab.labeli.form.ContentsForm;
 import com.lab.labeli.repository.ContentRepository;
+import com.lab.labeli.repository.ReferencesRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Map;
@@ -24,6 +23,7 @@ import java.util.stream.Collectors;
 
 public class ContentService {
     private final ContentRepository contentRepository;
+    private final ReferencesRepository referencesRepository;
 
     @Value("${not.found}")
     private String notFound;
@@ -36,7 +36,8 @@ public class ContentService {
     public ContentsDTO getContentsById(final int idContents) throws Exception{
         validateIfContentsExists(idContents);
         final Contents contents = contentRepository.findById(idContents).get();
-        return ContentsDTO.build(contents);
+        final List<References> referencesDTO = referencesRepository.findAllByContentId(idContents);
+        return ContentsDTO.build(contents, (ReferencesDTO) referencesDTO);
     }
 
     public void deleteContents(final int idContent) throws Exception{
