@@ -28,9 +28,26 @@ public class ContentService {
     @Value("${not.found}")
     private String notFound;
 
+    /*
     public List<ContentsDTO> getAllContents() {
         final List<Contents> getAll = contentRepository.findAll();
         return getAll.stream().map(ContentsDTO::build).toList();
+    }
+
+     */
+    public List<ContentsDTO> getAllContents() {
+        // Obtener todos los contenidos
+        List<Contents> contentsList = contentRepository.findAll();
+
+        // Para cada contenido, obtener sus referencias y construir el DTO correspondiente
+        return contentsList.stream().map(content -> {
+            List<References> references = referencesRepository.findAllByContentId(content.getContentId());
+            List<ReferencesDTO> referencesDTOList = references.stream()
+                    .map(ReferencesDTO::build)
+                    .collect(Collectors.toList());
+
+            return ContentsDTO.build(content, referencesDTOList);
+        }).collect(Collectors.toList());
     }
 
     public ContentsDTO getContentsById(final int idContents) throws Exception {

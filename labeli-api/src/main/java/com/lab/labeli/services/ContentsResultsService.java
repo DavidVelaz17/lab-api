@@ -2,16 +2,22 @@ package com.lab.labeli.services;
 
 import com.lab.labeli.dto.ContentsDTO;
 import com.lab.labeli.dto.ContentsResultsDTO;
+import com.lab.labeli.dto.ReferencesDTO;
 import com.lab.labeli.dto.ResultDTO;
+import com.lab.labeli.entity.Contents;
 import com.lab.labeli.entity.ContentsResults;
+import com.lab.labeli.entity.References;
 import com.lab.labeli.entity.Result;
 import com.lab.labeli.form.ContentsResultsForm;
+import com.lab.labeli.repository.ContentRepository;
 import com.lab.labeli.repository.ContentsResultsRepository;
+import com.lab.labeli.repository.ReferencesRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -24,6 +30,10 @@ public class ContentsResultsService {
 
     private final ContentsResultsRepository contentsResultsRepository;
     private final ContentService contentService;
+    private final ReferencesRepository referencesRepository;
+    private final ContentRepository contentRepository;
+
+
 
     @Value("${not.found}")
     private String notFound;
@@ -44,11 +54,49 @@ public class ContentsResultsService {
         return contentService.getIdListByContents(contentsId);
     }
 
+    /*
     public List<ContentsResultsDTO> getContentsResultsByResultId(final int resultId) throws Exception {
         final List<ContentsResults> listByResultId = contentsResultsRepository.findAllByResultId(resultId);
         final Map<Integer, ContentsDTO> contentsList = getContentsIdsMap(listByResultId.stream().map(ContentsResults::getContentId).toList());
         return listByResultId.stream().map(contentsBody -> ContentsResultsDTO.build(contentsBody, contentsList.get(contentsBody.getContentId()))).toList();
     }
+
+     */
+
+    //Esta es la misma funcion que se usa en contentsService XD
+    public ContentsDTO getContentsById(final int idContents) throws Exception {
+        final Contents contents = contentRepository.findById(idContents).orElseThrow(() -> new Exception("Content not found"));
+        final List<References> references = referencesRepository.findAllByContentId(idContents);
+        final List<ReferencesDTO> referencesDTOList = references.stream()
+                .map(ReferencesDTO::build)
+                .collect(Collectors.toList());
+
+        return ContentsDTO.build(contents, referencesDTOList);
+    }
+
+
+    public List<ContentsResultsDTO> getContentsResultsByResultId(final int resultId) throws Exception {
+        final List<ContentsResults> listByResultId = contentsResultsRepository.findAllByResultId(resultId);
+
+        // Map para almacenar los ContentsDTO por idContents
+        final Map<Integer, ContentsDTO> contentsMap = new HashMap<>();
+
+        // Para cada ContentsResults, obtenemos su ContentsDTO correspondiente usando getContentsById
+        for (ContentsResults contentsResult : listByResultId) {
+            int contentId = contentsResult.getContentId();
+            // Si no hemos cargado aún el ContentsDTO para este contentId, lo cargamos
+            if (!contentsMap.containsKey(contentId)) {
+                contentsMap.put(contentId, getContentsById(contentId));
+            }
+        }
+
+        // Convertimos cada ContentsResults a ContentsResultsDTO usando el ContentsDTO correspondiente
+        return listByResultId.stream()
+                .map(contentsResult -> ContentsResultsDTO.build(contentsResult, contentsMap.get(contentsResult.getContentId())))
+                .collect(Collectors.toList());
+    }
+
+
 
     public Map<Integer, ContentsResultsDTO> getIdListByContentResults(final List<Integer> idContentsResult) {
         final List<ContentsResults> idList = contentsResultsRepository.findAllById(idContentsResult);
