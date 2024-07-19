@@ -56,7 +56,7 @@ INSERT INTO contents (`content_id`, `content_name`) VALUES ('4060', 'Olor');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4061', 'Alimentos sin digerir');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4062', 'Moco');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4063', 'Sangre visible');
-INSERT INTO contents (`content_id`, `content_name`) VALUES ('4064', 'Sangre oculta en heces','Negativa');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4064', 'Sangre oculta en heces');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4065', 'Azucares reductores');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4066', 'Almidones');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4067', 'Grasas');
@@ -84,7 +84,7 @@ INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('409
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4099', 'Viscosidad');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4100', 'Licuefacción','Hr/ Min / Seg');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4101', 'Volumen','mL');
-INSERT INTO contents (`content_id`, `content_name`) VALUES ('4102', 'Grado de Movilidad','Grados %');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4102', 'Grado de Movilidad','Grados %');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4103', 'Lineal rapida');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4104', 'Lineal lenta');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4105', 'Moviles');
@@ -104,7 +104,7 @@ INSERT INTO contents (`content_id`, `content_name`) VALUES ('4123', 'HUEVECILLOS
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4124', 'HUEVECILLOS LARVAS');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4125', 'DENSIDAD');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4126', 'ESTEREASA LEUCOCITARIA');
-INSERT INTO contents (`content_id`, `content_name`,) VALUES ('4127', 'PROTEINAS');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4127', 'PROTEINAS');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4128', 'MICROALBUMINA');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4129', 'CETONAS');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4130', 'BILIRRUBINAS');
