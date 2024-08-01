@@ -260,3 +260,4 @@ INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_min`) VALU
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('3040', '6046', 'Hombres de ', '22', '0');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('3041', '6046', 'Mujeres de ', '29', '0');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('3042', '6047', 'Adultos de ', '6.0', '2.0');
+INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`) VALUES ('3043', '6048', 'NEGATIVO / POSITIVO');
