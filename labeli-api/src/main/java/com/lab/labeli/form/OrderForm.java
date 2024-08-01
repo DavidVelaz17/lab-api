@@ -24,6 +24,14 @@ public class OrderForm implements Serializable {
     @Size(max = 45,message = "{right.length}")
     private LocalDate orderTimeStamp;
 
+    @ApiObjectField(name= "orderAmountPaid", description = "Amount the customer payed with")
+    @Positive
+    private double orderAmountPaid;
+
+    @ApiObjectField(name= "orderChange", description = "Order's change")
+    @Positive
+    private double orderChange;
+
     @ApiObjectField(name= "orderDeposit", description = "Order's deposit")
     @Positive
     private double orderDeposit;

@@ -30,7 +30,13 @@ public class Order {
     @Column(name = "order_deposit", nullable = false)
     private double orderDeposit;
 
-    @Column(name = "oorder_total", nullable = false)
+    @Column(name = "order_amount_paid", nullable = false)
+    private double orderAmountPaid;
+
+    @Column(name = "order_change", nullable = false)
+    private double orderChange;
+
+    @Column(name = "order_total", nullable = false)
     private double orderTotal;
 
     @Column(name = "order_notes", nullable = false)
@@ -40,6 +46,8 @@ public class Order {
         this.idCustomers=form.getIdCustomers();
         this.idUsers=form.getIdUsers();
         this.orderTimeStamp=form.getOrderTimeStamp();
+        this.orderAmountPaid=form.getOrderAmountPaid();
+        this.orderChange=form.getOrderChange();
         this.orderDeposit=form.getOrderDeposit();
         this.orderTotal= form.getOrderTotal();
         this.orderNotes=form.getOrderNotes();

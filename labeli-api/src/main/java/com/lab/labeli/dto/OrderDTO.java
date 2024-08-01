@@ -1,6 +1,7 @@
 package com.lab.labeli.dto;
 
 import com.lab.labeli.entity.Order;
+import jakarta.validation.constraints.Positive;
 import lombok.Builder;
 import lombok.Getter;
 import org.jsondoc.core.annotation.ApiObjectField;
@@ -31,6 +32,12 @@ public class OrderDTO {
     @ApiObjectField(name = "orderTimeStamp", description = "Order's Time Stamp")
     private LocalDate orderTimeStamp;
 
+    @ApiObjectField(name= "orderAmountPaid", description = "Amount the customer paid with")
+    private double orderAmountPaid;
+
+    @ApiObjectField(name= "orderChange", description = "Order's change")
+    private double orderChange;
+
     @ApiObjectField(name = "orderDeposit", description = "Order's Deposit")
     private double orderDeposit;
 
@@ -46,6 +53,8 @@ public class OrderDTO {
                 .idCustomers(order.getIdCustomers())
                 .idUsers(order.getIdUsers())
                 .orderTimeStamp(order.getOrderTimeStamp())
+                .orderAmountPaid(order.getOrderAmountPaid())
+                .orderChange(order.getOrderChange())
                 .orderDeposit(order.getOrderDeposit())
                 .orderTotal(order.getOrderTotal())
                 .orderNotes(order.getOrderNotes())
@@ -63,6 +72,8 @@ public class OrderDTO {
                 .user(user)
                 .orderTest(orderTest)
                 .orderTimeStamp(order.getOrderTimeStamp())
+                .orderAmountPaid(order.getOrderAmountPaid())
+                .orderChange(order.getOrderChange())
                 .orderDeposit(order.getOrderDeposit())
                 .orderTotal(order.getOrderTotal())
                 .orderNotes(order.getOrderNotes())

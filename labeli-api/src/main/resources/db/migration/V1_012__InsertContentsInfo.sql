@@ -212,7 +212,7 @@ INSERT INTO contents (`content_id`, `content_name`, `content_units`) VALUES ('60
 INSERT INTO contents (`content_id`, `content_name`, `content_units`) VALUES ('6009', 'Albumina','g/L');
 INSERT INTO contents (`content_id`, `content_name`, `content_units`) VALUES ('6010', 'Globulina','g/L');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('6011', 'Relacion Albumina Globulina');
-INSERT INTO contents (`content_id`, `content_name`, `content_units`) VALUES ('6012', 'Bilirribina Total','mg/dL');
+INSERT INTO contents (`content_id`, `content_name`, `content_units`) VALUES ('6012', 'Bilirrubina Total','mg/dL');
 INSERT INTO contents (`content_id`, `content_name`, `content_units`) VALUES ('6013', 'Bilirrubina Directa','mg/dL');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('6014', 'Bilirrubina Indirecta');
 INSERT INTO contents (`content_id`, `content_name`, `content_units`) VALUES ('6015', 'DHL (Deshidrogenasa lactica)','U/L');
@@ -238,3 +238,4 @@ INSERT INTO contents (`content_id`, `content_name`) VALUES ('6044', 'V.I.H. (Vir
 INSERT INTO contents (`content_id`, `content_name`, `content_units`) VALUES ('6045', 'VITAMINA D (25-HIDROXI-COLECALCIFEROL)','ng/mL');
 INSERT INTO contents (`content_id`, `content_name`, `content_units`) VALUES ('6046', 'Velocidad de Sedimentación Globular','mm / Hr');
 INSERT INTO contents (`content_id`, `content_name`, `content_units`) VALUES ('6047', 'Yodo Proteico (IP)','ug/dL');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('6048','Prueba de embarazo');
