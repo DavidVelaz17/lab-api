@@ -1,6 +1,6 @@
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4002', 'CAPACIDAD DE FIJACION DE HIERRO','ug/dL');
-INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4003', 'SEGMENTADOS','%');
-INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4006', 'EOSINOFILOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4003', 'M1 CITOLOGIA DE MOCO NASAL- FOSA NASAL DERECHA - SEGMENTADOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4006', 'M1 CITOLOGIA DE MOCO NASAL- FOSA NASAL DERECHA - EOSINOFILOS','%');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4007', 'Impresion Hormonal','-');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4008', 'Indice de Maduracion', '-');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4009', 'Efecto Estrogenico', '-');
@@ -23,8 +23,8 @@ INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('402
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4026', 'PROTEINAS TOTALES', 'G/DL');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4027', 'CLORO','MMOL/L');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4028', 'CELULARIDAD','CEL/ML');
-INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4030', 'LINFOCITOS','%');
-INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4031', 'MONOCITOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4030', 'M1 CITOLOGIA DE MOCO NASAL- FOSA NASAL DERECHA - LINFOCITOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4031', 'M1 CITOLOGIA DE MOCO NASAL- FOSA NASAL DERECHA - MONOCITOS','%');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4032', 'POLIMORFONUCLEARES','%');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4033', 'CK-MB', 'ng/mL');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4035', 'COLESTEROL', 'mg/mL');
@@ -99,9 +99,9 @@ INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('411
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4118', 'Zoospermos viables','%');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4119', 'Zoospermos no viables','%');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4120', 'Numero de zoospermos','Cel/pL');
-INSERT INTO contents (`content_id`, `content_name`) VALUES ('4122', 'TROFOZOITOS QUISTES');
-INSERT INTO contents (`content_id`, `content_name`) VALUES ('4123', 'HUEVECILLOS PROGLOTIDES GRÁVIDOS');
-INSERT INTO contents (`content_id`, `content_name`) VALUES ('4124', 'HUEVECILLOS LARVAS');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4122', 'M1 PROTOZOARIOS TROFOZOITOS');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4123', 'M1 PROTOZOARIOS QUISTES');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4124', 'M1 PLATELMIENTOS HUEVECILLOS');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4125', 'DENSIDAD');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4126', 'ESTEREASA LEUCOCITARIA');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4127', 'PROTEINAS');
@@ -120,7 +120,51 @@ INSERT INTO contents (`content_id`, `content_name`) VALUES ('4139', 'CILINDROS G
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4140', 'CILINDRO HIALINOS');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4142', 'ERITROCITOS EUMORFICOS');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4143', 'ERITROCITOS DISMÓRFICOS');
-INSERT INTO contents (`content_id`, `content_name`) VALUES ('4144', 'CRISTALES');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4144', 'CRISTALES')
+;
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4145', 'M1 PLATELMIENTOS PROGLOTIDES GRÁVIDOS');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4146', 'M1 NEMATELMIENTOS HUEVECILLOS');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4147', 'M1 PLATELMIENTOS LARVAS');
+
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4148', 'M2 PROTOZOARIOS TROFOZOITOS');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4149', 'M2 PROTOZOARIOS QUISTES');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4150', 'M2 PLATELMIENTOS HUEVECILLOS');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4151', 'M2 PLATELMIENTOS PROGLOTIDES GRÁVIDOS');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4152', 'M2 NEMATELMIENTOS HUEVECILLOS');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4153', 'M2 PLATELMIENTOS LARVAS');
+
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4154', 'M3 PROTOZOARIOS TROFOZOITOS');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4155', 'M3 PROTOZOARIOS QUISTES');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4156', 'M3 PLATELMIENTOS HUEVECILLOS');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4157', 'M3 PLATELMIENTOS PROGLOTIDES GRÁVIDOS');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4158', 'M3 NEMATELMIENTOS HUEVECILLOS');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4159', 'M3 PLATELMIENTOS LARVAS');
+
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4160', 'M2 CITOLOGIA DE MOCO NASAL- FOSA NASAL DERECHA - SEGMENTADOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4161', 'M2 CITOLOGIA DE MOCO NASAL- FOSA NASAL DERECHA - EOSINOFILOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4162', 'M2 CITOLOGIA DE MOCO NASAL- FOSA NASAL DERECHA - LINFOCITOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4163', 'M2 CITOLOGIA DE MOCO NASAL- FOSA NASAL DERECHA - MONOCITOS','%');
+
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4164', 'M3 CITOLOGIA DE MOCO NASAL- FOSA NASAL DERECHA - SEGMENTADOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4165', 'M3 CITOLOGIA DE MOCO NASAL- FOSA NASAL DERECHA - EOSINOFILOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4166', 'M3 CITOLOGIA DE MOCO NASAL- FOSA NASAL DERECHA - LINFOCITOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4167', 'M3 CITOLOGIA DE MOCO NASAL - FOSA NASAL DERECHA - MONOCITOS','%');
+
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4168', 'M1 CITOLOGIA DE MOCO NASAL- FOSA NASAL IZQUIERDA - SEGMENTADOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4169', 'M1 CITOLOGIA DE MOCO NASAL- FOSA NASAL IZQUIERDA - EOSINOFILOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4170', 'M1 CITOLOGIA DE MOCO NASAL- FOSA NASAL IZQUIERDA - LINFOCITOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4171', 'M1 CITOLOGIA DE MOCO NASAL- FOSA NASAL IZQUIERDA - MONOCITOS','%');
+
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4172', 'M2 CITOLOGIA DE MOCO NASAL- FOSA NASAL IZQUIERDA - SEGMENTADOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4173', 'M2 CITOLOGIA DE MOCO NASAL- FOSA NASAL IZQUIERDA - EOSINOFILOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4174', 'M2 CITOLOGIA DE MOCO NASAL- FOSA NASAL IZQUIERDA - LINFOCITOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4175', 'M2 CITOLOGIA DE MOCO NASAL- FOSA NASAL IZQUIERDA - MONOCITOS','%');
+
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4176', 'M3 CITOLOGIA DE MOCO NASAL- FOSA NASAL IZQUIERDA - SEGMENTADOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4177', 'M3 CITOLOGIA DE MOCO NASAL- FOSA NASAL IZQUIERDA - EOSINOFILOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4178', 'M3 CITOLOGIA DE MOCO NASAL- FOSA NASAL IZQUIERDA - LINFOCITOS','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4179', 'M3 CITOLOGIA DE MOCO NASAL - FOSA NASAL IZQUIERDA - MONOCITOS','%');
+
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('5022', 'Factor Reumatoide');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('5023', 'FERRITINA','ng/mL');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('5024', 'FOSFATASA ACIDA TOTAL','U/L');
