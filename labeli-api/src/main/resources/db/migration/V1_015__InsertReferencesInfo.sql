@@ -129,6 +129,16 @@ INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1128', '4169');
 INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1129', '4170');
 INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1130', '4171');
 
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1131', '4172');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1132', '4173');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1133', '4174');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1134', '4175');
+
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1135', '4176');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1136', '4177');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1137', '4178');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1138', '4179');
+
 
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`) VALUES ('2000', '5022', 'NEGATIVO');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('2001', '5023', 'Hombre de ', '274.66', '21.81');
