@@ -7,6 +7,8 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Entity
 @Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -27,16 +29,21 @@ public class CustomerTest {
     @Convert(converter = StatusConvertor.class)
     private Status status;
 
+    @Column(name = "price_by_test", nullable = false)
+    private BigDecimal priceByTest;
+
     public CustomerTest(final CustomerTestForm formCustomerTest) {
         this.idCustomers = formCustomerTest.getIdCustomer();
         this.idTest = formCustomerTest.getIdTest();
         this.status=formCustomerTest.getStatus();
+        this.priceByTest = formCustomerTest.getPriceByTest();
     }
 
     public void updateCustomerTest(final CustomerTestForm formCustomerTest) {
         this.idCustomers = formCustomerTest.getIdCustomer();
         this.idTest = formCustomerTest.getIdTest();
         this.status=formCustomerTest.getStatus();
+        this.priceByTest = formCustomerTest.getPriceByTest();
     }
 
 

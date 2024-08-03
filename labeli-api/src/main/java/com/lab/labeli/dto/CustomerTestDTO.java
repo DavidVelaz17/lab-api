@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import org.jsondoc.core.annotation.ApiObjectField;
 
+import java.math.BigDecimal;
+
 @Data
 @Builder
 public class CustomerTestDTO {
@@ -25,12 +27,16 @@ public class CustomerTestDTO {
     @ApiObjectField(name = "status", description = "Customer's ID")
     private Status status;
 
+    @ApiObjectField(name = "priceByTest", description = "Customer's priceByTest")
+    private BigDecimal priceByTest;
+
     public static CustomerTestDTO build(final CustomerTest customerTest) {
         return CustomerTestDTO.builder()
                 .idCustomersTests(customerTest.getIdCustomersTests())
                 .idCustomer(customerTest.getIdCustomers())
                 .idTest(customerTest.getIdTest())
                 .status(customerTest.getStatus())
+                .priceByTest(customerTest.getPriceByTest())
                 .build();
     }
 
@@ -41,6 +47,7 @@ public class CustomerTestDTO {
                 .idTest(customerTest.getIdTest())
                 .testDTO(testDTO)
                 .status(customerTest.getStatus())
+                .priceByTest(customerTest.getPriceByTest())
                 .build();
     }
 }
