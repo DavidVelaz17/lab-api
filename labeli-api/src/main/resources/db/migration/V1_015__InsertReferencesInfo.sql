@@ -230,7 +230,7 @@ INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`) VALU
 INSERT INTO reference (`idreferences`, `content_id`, `v_max`, `v_min`) VALUES ('3010', '6009', '50', '35');
 INSERT INTO reference (`idreferences`, `content_id`, `v_max`, `v_min`) VALUES ('3011', '6010', '35', '20');
 INSERT INTO reference (`idreferences`, `content_id`, `v_max`, `v_min`) VALUES ('3012', '6011', '2.2', '1.1');
-INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`) VALUES ('3013', '6013', 'Hasta', '1');
+INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`) VALUES ('3013', '6012', 'Hasta', '1');
 INSERT INTO reference (`idreferences`, `content_id`, `v_max`, `v_min`) VALUES ('3014', '6015', '414', '207');
 INSERT INTO reference (`idreferences`, `content_id`, `v_max`, `v_min`) VALUES ('3015', '6023', '45', '15');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('3016', '6024', 'Mujeres de', '1.1', '0.6');
@@ -261,3 +261,5 @@ INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_m
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('3041', '6046', 'Mujeres de ', '29', '0');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('3042', '6047', 'Adultos de ', '6.0', '2.0');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`) VALUES ('3043', '6048', 'NEGATIVO / POSITIVO');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('3044', '6014');
+INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`) VALUES ('3045', '6013', 'Hasta', '0.2');

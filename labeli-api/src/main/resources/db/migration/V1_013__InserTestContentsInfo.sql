@@ -465,3 +465,5 @@ INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES (
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('9090', '3034', '6047');
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('9091', '3035', '6001');
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('9092', '3005', '6048');
+INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('9093', '3002', '5077');
+INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('9094', '3002', '5078');

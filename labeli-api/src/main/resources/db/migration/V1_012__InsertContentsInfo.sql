@@ -209,4 +209,4 @@ INSERT INTO contents (`content_id`, `content_name`) VALUES ('6044', 'V.I.H. (Vir
 INSERT INTO contents (`content_id`, `content_name`, `content_units`) VALUES ('6045', 'VITAMINA D (25-HIDROXI-COLECALCIFEROL)','ng/mL');
 INSERT INTO contents (`content_id`, `content_name`, `content_units`) VALUES ('6046', 'Velocidad de Sedimentación Globular','mm / Hr');
 INSERT INTO contents (`content_id`, `content_name`, `content_units`) VALUES ('6047', 'Yodo Proteico (IP)','ug/dL');
-INSERT INTO contents (`content_id`, `content_name`) VALUES ('6048','Prueba de embarazo');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('6048','Prueba inmunológica de embarazo en sangre');
