@@ -124,7 +124,10 @@ INSERT INTO reference (`idreferences`, `content_id`,`v_ref_text`) VALUES ('1123'
 INSERT INTO reference (`idreferences`, `content_id`,`v_ref_text`, `v_max`, `v_min`) VALUES ('1124', '4142','por campo','5','3');
 INSERT INTO reference (`idreferences`, `content_id`,`v_ref_text`) VALUES ('1125', '4143','Ausentes');
 INSERT INTO reference (`idreferences`, `content_id`,`v_ref_text`) VALUES ('1126', '4144','Ausentes');
-
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1127', '4168');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1128', '4169');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1129', '4170');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1130', '4171');
 
 
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`) VALUES ('2000', '5022', 'NEGATIVO');
