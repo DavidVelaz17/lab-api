@@ -35,16 +35,22 @@ public class CustomerTest {
     public CustomerTest(final CustomerTestForm formCustomerTest) {
         this.idCustomers = formCustomerTest.getIdCustomer();
         this.idTest = formCustomerTest.getIdTest();
-        this.status=formCustomerTest.getStatus();
+        this.status = formCustomerTest.getStatus();
         this.priceByTest = formCustomerTest.getPriceByTest();
     }
 
     public void updateCustomerTest(final CustomerTestForm formCustomerTest) {
-        this.idCustomers = formCustomerTest.getIdCustomer();
-        this.idTest = formCustomerTest.getIdTest();
-        this.status=formCustomerTest.getStatus();
-        this.priceByTest = formCustomerTest.getPriceByTest();
+        if (formCustomerTest.getIdCustomer() != null) {
+            this.idCustomers = formCustomerTest.getIdCustomer();
+        }
+        if (formCustomerTest.getIdTest() != null) {
+            this.idTest = formCustomerTest.getIdTest();
+        }
+        if (formCustomerTest.getStatus() != null) {
+            this.status = formCustomerTest.getStatus();
+        }
+        if (formCustomerTest.getPriceByTest() != null) {
+            this.priceByTest = formCustomerTest.getPriceByTest();
+        }
     }
-
-
 }
