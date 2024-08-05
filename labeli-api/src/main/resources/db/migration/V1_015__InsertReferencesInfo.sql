@@ -139,6 +139,34 @@ INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1136', '4177');
 INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1137', '4178');
 INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1138', '4179');
 
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1139', '4145');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1140', '4146');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1141', '4147');
+
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1142', '4148');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1143', '4149');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1144', '4150');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1145', '4151');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1146', '4152');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1147', '4153');
+
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1148', '4154');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1149', '4155');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1150', '4156');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1151', '4157');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1152', '4158');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1153', '4159');
+
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1154', '4160');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1155', '4161');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1156', '4162');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1157', '4163');
+
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1158', '4164');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1159', '4165');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1160', '4166');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1161', '4167');
+
 
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`) VALUES ('2000', '5022', 'NEGATIVO');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('2001', '5023', 'Hombre de ', '274.66', '21.81');
