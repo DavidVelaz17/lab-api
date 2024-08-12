@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 @Entity
 @Getter
@@ -54,8 +55,12 @@ public class Order {
     }
 
     public void updateOrder(final OrderForm form){
-        this.orderDeposit=form.getOrderDeposit();
-        this.orderNotes=form.getOrderNotes();
+        Optional.ofNullable(form.getOrderDeposit()).ifPresent(deposit->this.orderDeposit=deposit);
+        Optional.ofNullable(form.getOrderNotes()).ifPresent(notes->this.orderNotes=notes);
+        Optional.ofNullable(form.getOrderDeposit()).ifPresent(deposit->this.orderDeposit=deposit);
+        Optional.ofNullable(form.getOrderAmountPaid()).ifPresent(amount->this.orderAmountPaid=amount);
+        Optional.ofNullable(form.getOrderChange()).ifPresent(change->this.orderChange=change);
+
     }
 
 }

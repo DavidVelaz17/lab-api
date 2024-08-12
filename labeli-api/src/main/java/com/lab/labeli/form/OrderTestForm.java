@@ -7,13 +7,13 @@ import java.io.Serializable;
 
 @Data
 public class OrderTestForm implements Serializable {
-    @ApiObjectField(name = "idOrderTest", description = "Id's order test")
-    private int idOrderTest;
+    //@ApiObjectField(name = "idOrderTest", description = "Id's order test")
+    //private int idOrderTest;
 
     @ApiObjectField(name = "idOrder", description = "Id's order")
-    private int idOrder;
+    private Integer idOrder;
 
     @ApiObjectField(name = "idTest", description = "Id's test")
-    private int idTest;
+    private Integer idTest;
 
 }

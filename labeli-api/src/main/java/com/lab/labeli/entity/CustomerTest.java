@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 @Entity
 @Data
@@ -40,17 +41,9 @@ public class CustomerTest {
     }
 
     public void updateCustomerTest(final CustomerTestForm formCustomerTest) {
-        if (formCustomerTest.getIdCustomer() != null) {
-            this.idCustomers = formCustomerTest.getIdCustomer();
-        }
-        if (formCustomerTest.getIdTest() != null) {
-            this.idTest = formCustomerTest.getIdTest();
-        }
-        if (formCustomerTest.getStatus() != null) {
-            this.status = formCustomerTest.getStatus();
-        }
-        if (formCustomerTest.getPriceByTest() != null) {
-            this.priceByTest = formCustomerTest.getPriceByTest();
-        }
+        Optional.ofNullable(formCustomerTest.getIdCustomer()).ifPresent(id -> this.idCustomers = id);
+        Optional.ofNullable(formCustomerTest.getIdTest()).ifPresent(id -> this.idTest = id);
+        Optional.ofNullable(formCustomerTest.getStatus()).ifPresent(status -> this.status = status);
+        Optional.ofNullable(formCustomerTest.getPriceByTest()).ifPresent(price -> this.priceByTest = price);
     }
 }

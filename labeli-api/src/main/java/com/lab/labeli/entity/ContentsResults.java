@@ -6,6 +6,8 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.Optional;
+
 @Entity
 @Getter
 @Table(name = "contents_results")
@@ -26,16 +28,14 @@ public class ContentsResults {
     private String resultValue;
 
     public ContentsResults(final ContentsResultsForm form) {
-        //This line was commented to update a testContent and only make use of resultValue
-        this.resultId = form.getResultId();
+       this.resultId = form.getResultId();
         this.contentId = form.getContentId();
         this.resultValue = form.getResultValue();
     }
 
     public void updateContentsResults(final ContentsResultsForm form) {
-        //This line was commented to update a testContent and only make use of resultValue
-        //this.resultId=form.getResultId();
-        //this.contentId=form.getContentId();
-        this.resultValue = form.getResultValue();
+        Optional.ofNullable(form.getResultId()).ifPresent(id -> this.resultId = id);
+        Optional.ofNullable(form.getContentId()).ifPresent(id -> this.contentId = id);
+        Optional.ofNullable(form.getResultValue()).ifPresent(id -> this.resultValue = id);
     }
 }

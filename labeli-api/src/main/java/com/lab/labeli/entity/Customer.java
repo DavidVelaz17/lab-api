@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 @Entity
 @Getter
@@ -48,11 +49,11 @@ public class Customer {
     }
 
     public void updateCustomer(final CustomerForm form){
-        this.name= form.getName();
-        this.age=form.getAge();
-        this.phoneNumber=form.getPhoneNumber();
-        this.address=form.getAddress();
-        this.dateOfBirth=form.getDateOfBirth();
-        this.doctorName=form.getDoctorName();
+        Optional.ofNullable(form.getName()).ifPresent(name -> this.name=name);
+        Optional.ofNullable(form.getAge()).ifPresent(age -> this.age=age);
+        Optional.ofNullable(form.getPhoneNumber()).ifPresent(phoneNumber -> this.phoneNumber=phoneNumber);
+        Optional.ofNullable(form.getAddress()).ifPresent(address -> this.address=address);
+        Optional.ofNullable(form.getDoctorName()).ifPresent(doctorName -> this.doctorName=doctorName);
+        Optional.ofNullable(form.getDateOfBirth()).ifPresent(date -> this.dateOfBirth=date);
     }
 }

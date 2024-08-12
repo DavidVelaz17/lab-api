@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Data
 public class ReferencesForm implements Serializable {
     @ApiObjectField(name= "contentId", description = "Contents's Id")
-    private int contentId;
+    private Integer contentId;
 
     @ApiObjectField(name= "vRefText", description = "Reference Value in Text")
     @Size(max = 500,message = "{right.length}")

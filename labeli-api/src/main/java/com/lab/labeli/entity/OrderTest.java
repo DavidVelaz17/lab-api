@@ -6,6 +6,8 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Optional;
+
 @Entity
 @Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -28,8 +30,8 @@ public class OrderTest {
     }
 
     public void updateOrderTestFunction(final OrderTestForm form) {
-        this.idOrder = form.getIdOrder();
-        this.idTest = form.getIdTest();
+        Optional.ofNullable(form.getIdOrder()).ifPresent(id -> this.idOrder = id);
+        Optional.ofNullable(form.getIdTest()).ifPresent(id -> this.idTest = id);
     }
 
 }

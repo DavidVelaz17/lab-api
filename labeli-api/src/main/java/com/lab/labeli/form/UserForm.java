@@ -15,7 +15,7 @@ public class UserForm implements Serializable {
 
     @ApiObjectField(name= "age", description = "Users's age")
     @Size (max = 3,message = "{right.length}")
-    private int age;
+    private Integer age;
 
     @ApiObjectField(name = "phoneNumber", description = "Users's phone number")
     @Size(max = 13, message = "{phoneNumber.right.length}")

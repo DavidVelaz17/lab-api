@@ -14,10 +14,10 @@ public class ContentsResultsForm implements Serializable {
 
     //This line was commented to update a testContent and only make use of resultValue
     @ApiObjectField(name= "resultId", description = "Result Id")
-    private int resultId;
+    private Integer resultId;
 
     @ApiObjectField(name= "contentId", description = "Content Ids")
-    private int contentId;
+    private Integer contentId;
 
     @ApiObjectField(name= "resultValue", description = "Result value")
     @Size (max = 100,message = "{right.length}")
