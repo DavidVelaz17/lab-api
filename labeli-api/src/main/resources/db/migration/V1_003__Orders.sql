@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
     `order_deposit` DOUBLE NULL,
     `order_total` DOUBLE NOT NULL,
     `order_notes` VARCHAR(200) NULL,
+    `order_reminding` DOUBLE NULL,
     PRIMARY KEY (`idorders`),
     INDEX `idcustomers_idx` (`idcustomers` ASC) VISIBLE,
     INDEX `idusers_idx` (`idusers` ASC) VISIBLE,

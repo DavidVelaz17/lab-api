@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -45,6 +46,7 @@ public class OrderService {
                             orderTestDTOMap
                                 .get(order.getIdOrders())
                     ))
+                .sorted(Comparator.comparing(OrderDTO::getIdOrders).reversed())
                 .toList();
     }
 

@@ -43,4 +43,9 @@ public class OrderForm implements Serializable {
     @ApiObjectField(name= "orderNotes", description = "Order's notes")
     @Size(max = 200,message = "{right.length}")
     private String orderNotes;
+
+    @ApiObjectField(name= "orderReminding", description = "Order's reminding")
+    @Positive
+    private Double orderReminding;
+
 }

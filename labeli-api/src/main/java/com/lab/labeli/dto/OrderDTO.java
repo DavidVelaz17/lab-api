@@ -47,6 +47,9 @@ public class OrderDTO {
     @ApiObjectField(name = "orderNotes", description = "Order's Notes")
     private String orderNotes;
 
+    @ApiObjectField(name = "orderReminding", description = "Order's reminding")
+    private double orderReminding;
+
     public static OrderDTO build(final Order order){
         return OrderDTO.builder()
                 .idOrders(order.getIdOrders())
@@ -58,6 +61,7 @@ public class OrderDTO {
                 .orderDeposit(order.getOrderDeposit())
                 .orderTotal(order.getOrderTotal())
                 .orderNotes(order.getOrderNotes())
+                .orderReminding(order.getOrderReminding())
                 .build();
     }
 
@@ -77,6 +81,7 @@ public class OrderDTO {
                 .orderDeposit(order.getOrderDeposit())
                 .orderTotal(order.getOrderTotal())
                 .orderNotes(order.getOrderNotes())
+                .orderReminding(order.getOrderReminding())
                 .build();
     }
 }

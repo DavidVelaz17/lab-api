@@ -40,8 +40,11 @@ public class Order {
     @Column(name = "order_total", nullable = false)
     private double orderTotal;
 
-    @Column(name = "order_notes", nullable = false)
+    @Column(name = "order_notes")
     private String orderNotes;
+
+    @Column(name = "order_reminding")
+    private double orderReminding;
 
     public Order(final OrderForm form){
         this.idCustomers=form.getIdCustomers();
@@ -52,6 +55,7 @@ public class Order {
         this.orderDeposit=form.getOrderDeposit();
         this.orderTotal= form.getOrderTotal();
         this.orderNotes=form.getOrderNotes();
+        this.orderReminding=form.getOrderReminding();
     }
 
     public void updateOrder(final OrderForm form){
@@ -60,7 +64,7 @@ public class Order {
         Optional.ofNullable(form.getOrderDeposit()).ifPresent(deposit->this.orderDeposit=deposit);
         Optional.ofNullable(form.getOrderAmountPaid()).ifPresent(amount->this.orderAmountPaid=amount);
         Optional.ofNullable(form.getOrderChange()).ifPresent(change->this.orderChange=change);
-
+        Optional.ofNullable(form.getOrderReminding()).ifPresent(reminding->this.orderReminding=reminding);
     }
 
 }
