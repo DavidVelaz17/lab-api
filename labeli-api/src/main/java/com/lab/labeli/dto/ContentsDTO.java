@@ -8,14 +8,14 @@ import org.jsondoc.core.annotation.ApiObjectField;
 @Builder
 public class ContentsDTO {
     @ApiObjectField(name= "contentId", description = "Contents's name")
-    private String contentId;
+    private int contentId;
 
     @ApiObjectField(name= "name", description = "Contents's name")
     private String name;
 
     public static ContentsDTO build(final Contents content){
         return ContentsDTO.builder()
-                .contentId(content.getContentName())
+                .contentId(content.getContentId())
                 .name(content.getContentName())
                 .build();
     }

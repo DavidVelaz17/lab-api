@@ -1,8 +1,8 @@
 CREATE TABLE IF NOT EXISTS `results` (
-    `idresults` INT NOT NULL,
+    `idresults` INT NOT NULL AUTO_INCREMENT,
     `idcustomers` INT NOT NULL,
     `idtests` INT NOT NULL,
-    `result_timestamp` VARCHAR(45) NULL,
+    `result_timestamp` DATE NULL,
     `result_note` VARCHAR(100) NULL,
     PRIMARY KEY (`idresults`),
     INDEX `idcustomer_idx` (`idcustomers` ASC) VISIBLE,

@@ -1,4 +1,5 @@
 package com.lab.labeli.restcontrollers;
+import com.lab.labeli.dto.CustomerTestDTO;
 import com.lab.labeli.dto.TestContentsDTO;
 import com.lab.labeli.form.TestContentsForm;
 import com.lab.labeli.services.TestContentsService;
@@ -18,6 +19,12 @@ public class TestContentsController {
     public ResponseEntity<List <TestContentsDTO>> getAllTestContents(){
         final List<TestContentsDTO> testContentsList = testContentsService.getAllTestContents();
         return ResponseEntity.ok().body(testContentsList);
+    }
+
+    @GetMapping(path = "/test/{testId}")
+    public ResponseEntity<List<TestContentsDTO>> getAllTestContentsByTestId(@PathVariable("testId") final int testId) throws Exception {
+        final List<TestContentsDTO> testContentsInfo = testContentsService.getTestContentsByIdTest(testId);
+        return ResponseEntity.ok().body(testContentsInfo);
     }
 
     @GetMapping("/{testContentId}")
