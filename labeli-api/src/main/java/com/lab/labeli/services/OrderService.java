@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -45,6 +46,7 @@ public class OrderService {
                             orderTestDTOMap
                                 .get(order.getIdOrders())
                     ))
+                .sorted(Comparator.comparing(OrderDTO::getIdOrders).reversed())
                 .toList();
     }
 
@@ -55,6 +57,29 @@ public class OrderService {
         final CustomerDTO customerDTO = customerService.getCustomerById(order.getIdCustomers());
         final OrderTestDTO orderTestDTO = orderTestService.getOrderTestByIdOrder(order.getIdOrders());
         return OrderDTO.build(order,userDTO,customerDTO,orderTestDTO);
+    }
+
+    public List<OrderDTO>  getOrderByCustomerId(final int idCustomer){
+        List<Order> order = orderRepository.findAllByIdCustomers(idCustomer);
+        final Map<Integer, CustomerDTO> customerDTOMap =
+                getCustomersMap(order.stream().map(Order::getIdCustomers).toList());
+        final Map<Integer, UserDTO> userDTOMap =
+                getUsersMap(order.stream().map(Order::getIdUsers).toList());
+        final Map<Integer, OrderTestDTO> orderTestDTOMap =
+                getOrderTestsByIds(order.stream().map(Order::getIdOrders).toList());
+        return order
+                .stream()
+                .map(orders -> OrderDTO
+                        .build(orders,
+                                userDTOMap
+                                        .get(orders.getIdUsers()),
+                                customerDTOMap
+                                        .get(orders.getIdCustomers()),
+                                orderTestDTOMap
+                                        .get(orders.getIdOrders())
+                        ))
+                .sorted(Comparator.comparing(OrderDTO::getIdOrders).reversed())
+                .toList();
     }
 
     public OrderDTO creteOrder(final OrderForm form){

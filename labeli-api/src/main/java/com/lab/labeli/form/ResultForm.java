@@ -13,11 +13,11 @@ import java.time.LocalDate;
 public class ResultForm implements Serializable {
     @ApiObjectField(name= "idCustomers", description = "Customer's id")
     @Positive
-    private int idCustomers;
+    private Integer idCustomers;
 
     @ApiObjectField(name= "idTests", description = "Test's id")
     @Positive
-    private int idTests;
+    private Integer idTests;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @ApiObjectField(name= "resultTimeStamp", description = "Result's Time Stamp")

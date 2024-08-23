@@ -25,8 +25,8 @@ public class ContentsController {
 
     @GetMapping("/{contentId}")
     public ResponseEntity<ContentsDTO> getContentById(@PathVariable("contentId") final int contentId) throws Exception{
-        final ContentsDTO saveContentsInfo = contentService.getContentsById(contentId);
-        return ResponseEntity.ok().body(saveContentsInfo);
+        final ContentsDTO ContentsInfo = contentService.getContentsById(contentId);
+        return ResponseEntity.ok().body(ContentsInfo);
     }
 
     @PostMapping("")

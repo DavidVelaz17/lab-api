@@ -6,6 +6,8 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Optional;
+
 @Data
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -32,8 +34,8 @@ public class Test {
     }
 
     public void updateTestFunction(final TestForm form) {
-        this.testName = form.getTestName();
-        this.testPrice = form.getTestPrice();
-        this.testPriceWithDiscount = form.getTestPriceWithDiscount();
+        Optional.ofNullable(form.getTestName()).ifPresent(name -> this.testName = name);
+        Optional.ofNullable(form.getTestPrice()).ifPresent(price -> this.testPrice = price);
+        Optional.ofNullable(form.getTestPriceWithDiscount()).ifPresent(price -> this.testPriceWithDiscount = price);
     }
 }

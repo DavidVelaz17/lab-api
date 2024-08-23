@@ -29,6 +29,12 @@ public class OrderController {
         return ResponseEntity.ok().body(orderDTO);
     }
 
+    @GetMapping("/customer/{customerId}")
+    public ResponseEntity<List<OrderDTO>> getOrderByCustomerId(@PathVariable("customerId") final int customerId) {
+        final List<OrderDTO> orderDTOList  = orderService.getOrderByCustomerId(customerId);
+        return ResponseEntity.ok().body(orderDTOList);
+    }
+
     @PostMapping
     public ResponseEntity<OrderDTO> saveOrder(@RequestBody @Valid final OrderForm form) {
         final OrderDTO orderDTO = orderService.creteOrder(form);

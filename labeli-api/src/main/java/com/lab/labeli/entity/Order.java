@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 @Entity
 @Getter
@@ -30,24 +31,40 @@ public class Order {
     @Column(name = "order_deposit", nullable = false)
     private double orderDeposit;
 
-    @Column(name = "oorder_total", nullable = false)
+    @Column(name = "order_amount_paid", nullable = false)
+    private double orderAmountPaid;
+
+    @Column(name = "order_change", nullable = false)
+    private double orderChange;
+
+    @Column(name = "order_total", nullable = false)
     private double orderTotal;
 
-    @Column(name = "order_notes", nullable = false)
+    @Column(name = "order_notes")
     private String orderNotes;
+
+    @Column(name = "order_reminding")
+    private double orderReminding;
 
     public Order(final OrderForm form){
         this.idCustomers=form.getIdCustomers();
         this.idUsers=form.getIdUsers();
         this.orderTimeStamp=form.getOrderTimeStamp();
+        this.orderAmountPaid=form.getOrderAmountPaid();
+        this.orderChange=form.getOrderChange();
         this.orderDeposit=form.getOrderDeposit();
         this.orderTotal= form.getOrderTotal();
         this.orderNotes=form.getOrderNotes();
+        this.orderReminding=form.getOrderReminding();
     }
 
     public void updateOrder(final OrderForm form){
-        this.orderDeposit=form.getOrderDeposit();
-        this.orderNotes=form.getOrderNotes();
+        Optional.ofNullable(form.getOrderDeposit()).ifPresent(deposit->this.orderDeposit=deposit);
+        Optional.ofNullable(form.getOrderNotes()).ifPresent(notes->this.orderNotes=notes);
+        Optional.ofNullable(form.getOrderDeposit()).ifPresent(deposit->this.orderDeposit=deposit);
+        Optional.ofNullable(form.getOrderAmountPaid()).ifPresent(amount->this.orderAmountPaid=amount);
+        Optional.ofNullable(form.getOrderChange()).ifPresent(change->this.orderChange=change);
+        Optional.ofNullable(form.getOrderReminding()).ifPresent(reminding->this.orderReminding=reminding);
     }
 
 }
