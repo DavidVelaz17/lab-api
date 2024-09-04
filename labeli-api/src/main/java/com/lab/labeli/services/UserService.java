@@ -12,6 +12,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -30,7 +31,11 @@ public class UserService {
 
     public List<UserDTO> getAllUsers() {
         final List<User> getAll = userRepository.findAll();
-        return getAll.stream().map(UserDTO::build).toList();
+        return getAll
+                .stream()
+                .map(UserDTO::build)
+                .sorted(Comparator.comparing(UserDTO::getIdUser).reversed())
+                .toList();
     }
 
     public UserDTO getUserById(final int idUser) throws Exception {

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -30,7 +31,11 @@ public class CustomerService {
 
     public List<CustomerDTO> getAllCustomer() {
         final List<Customer> getAll = customerRepository.findAll();
-        return getAll.stream().map(CustomerDTO::build).toList();
+        return getAll
+                .stream()
+                .map(CustomerDTO::build)
+                .sorted(Comparator.comparing(CustomerDTO::getIdCustomer).reversed())
+                .toList();
     }
 
 
