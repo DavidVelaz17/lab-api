@@ -7,7 +7,7 @@ INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('400
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4010', 'Efecto progestacional', '-');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4011', 'Flora bacteriana');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4012', 'Leucocitos');
-INSERT INTO contents (`content_id`, `content_name`) VALUES ('4013', 'Eritrocitos');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4013', 'Eritrocitos','Cel/Campo');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4014', 'Agentes infectantes');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4015', 'Otros elementos');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4016', 'Celulas del Epitelio Ectocervical y Vaginal');
@@ -21,13 +21,13 @@ INSERT INTO contents (`content_id`, `content_name`) VALUES ('4023', 'Aspecto');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4024', 'PH');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4025', 'Glucosa','mg/dl');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4026', 'Proteinas Totales', 'g/dl');
-INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4027', 'Cloro','Mmol/L');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4027', 'Cloro','mmol/L');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4028', 'Celularidad','Cel/Ml');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4030', 'M1 Citologia de moco nasal- Fosa Nasal Derecha - Linfocitos','%');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4031', 'M1 Citologia de moco nasal- Fosa Nasal Derecha - Monocitos','%');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4032', 'Polimorfonucleares','%');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4033', 'Ck-Mb', 'ng/mL');
-INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4035', 'Colesterol', 'mg/mL');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4035', 'Colesterol', 'mg/dL');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4036', 'Complemento Hemolitico C3','mg/dl');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4037', 'Complemento Hemolitico C4','mg/dl');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4038', 'Amikacina');
@@ -36,7 +36,6 @@ INSERT INTO contents (`content_id`, `content_name`) VALUES ('4040', 'Carbenicili
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4041', 'Cefalotina');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4042', 'Cefotaxima');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4043', 'Ceftamicina');
-INSERT INTO contents (`content_id`, `content_name`) VALUES ('4044', 'Cefuroxima');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4045', 'Ciprofloxacina');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4046', 'Clindamicina');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4047', 'Cloranfenicol');
@@ -118,8 +117,8 @@ INSERT INTO contents (`content_id`, `content_name`) VALUES ('4137', 'Bacterias (
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4138', 'Bacterias (Cocos)');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4139', 'Cilindros Granulosos');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4140', 'Cilindros Hialinos');
-INSERT INTO contents (`content_id`, `content_name`) VALUES ('4142', 'Eritrocitos EUMORFICOS');
-INSERT INTO contents (`content_id`, `content_name`) VALUES ('4143', 'Eritrocitos DISMÓRFICOS');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4142', 'Eritrocitos eumorficos');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4143', 'Eritrocitos dismorficos');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4144', 'Cristales')
 ;
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4145', 'M1 Platelmientos proglotides gravidos');
