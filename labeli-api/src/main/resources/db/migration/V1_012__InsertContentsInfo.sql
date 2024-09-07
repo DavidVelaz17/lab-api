@@ -7,7 +7,7 @@ INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('400
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4010', 'Efecto Progestacional', '-');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4011', 'Flora Bacteriana');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4012', 'Leucocitos','Cel/Campo');
-INSERT INTO contents (`content_id`, `content_name`) VALUES ('4013', 'Eritrocitos');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4013', 'Eritrocitos','Erit/Campo');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4014', 'Agentes infectantes');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4015', 'Otros Elementos');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4016', 'Celulas del Epitelio Ectocervical y Vaginal');
