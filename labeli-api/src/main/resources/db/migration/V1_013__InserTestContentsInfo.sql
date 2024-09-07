@@ -229,7 +229,7 @@ INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES (
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7196', '1032', '4127');
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7197', '1032', '4128');
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7198', '1032', '4129');
-INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7199', '1032', '4030');
+INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7199', '1032', '4130');
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7200', '1032', '4025');
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7201', '1032', '4132');
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7202', '1032', '4133');
@@ -323,6 +323,9 @@ INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES (
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7281', '1004', '4177');
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7282', '1004', '4178');
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7283', '1004', '4179');
+
+INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7175', '1028', '4012')
+INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7176', '1028', '4013')
 
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('8001', '2001', '4038');
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('8002', '2001', '4039');

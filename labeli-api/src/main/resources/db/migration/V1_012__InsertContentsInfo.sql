@@ -6,7 +6,7 @@ INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('400
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4009', 'Efecto Estrogenico', '-');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4010', 'Efecto Progestacional', '-');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4011', 'Flora Bacteriana');
-INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4012', 'Leucocitos','k/uL');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4012', 'Leucocitos','Cel/Campo');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4013', 'Eritrocitos');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4014', 'Agentes infectantes');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4015', 'Otros Elementos');
@@ -67,7 +67,7 @@ INSERT INTO contents (`content_id`, `content_name`) VALUES ('4072', 'Mononuclear
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4073', 'Cortison Matutino','nmol/L');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4074', 'Cortisol Vespertino','nmol/L');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4075', 'CPK','U/L');
-INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4076', 'Creatin Fosfo Cinasa Total - CPK','U/L');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4076', 'Creatin Fosfo Cinasa Total - MB-CK-MB','U/L');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4077', 'Creatin Fosfo Cinasa Total - CPK','U/L');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4079', 'Glucosa 1 (en ayuno)','mg/dL');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4080', 'Glucosa 2 (a la hora)','mg/dL');
