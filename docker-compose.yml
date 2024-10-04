@@ -2,7 +2,7 @@ version: '1'
 
 services:
   lab_api:
-    build: ./labeli-api
+    build: .
     mem_limit: 512m
     ports:
       - "8081:8081"
