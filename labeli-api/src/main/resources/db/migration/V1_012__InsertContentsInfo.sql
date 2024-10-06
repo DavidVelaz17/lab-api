@@ -165,6 +165,9 @@ INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('417
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4178', 'Muestra 3 Citologia de Moco Nasal- Fosa Nasal Izquierda - LINFOCITOS','%');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4179', 'Muestra 3 Citologia de Moco Nasal- Fosa Nasal Izquierda - MONOCITOS','%');
 
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4180', 'Linfocitos','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4181', 'Monocitos','%');
+
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('5022', 'Factor Reumatoide');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('5023', 'Ferritina','ng/mL');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('5024', 'Fosfatasa Acida Total','U/L');

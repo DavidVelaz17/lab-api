@@ -46,8 +46,8 @@ INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES (
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7039', '1006', '4027');
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7040', '1006', '4028');
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7041', '1006', '4013');
-INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7042', '1006', '4030');
-INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7043', '1006', '4031');
+INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7042', '1006', '4180');
+INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7043', '1006', '4181');
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7044', '1006', '4032');
 
 INSERT INTO test_contents (`test_content_id`, `tests_id`, `content_id`) VALUES ('7045', '1007', '4033');
