@@ -21,7 +21,7 @@ INSERT INTO contents (`content_id`, `content_name`) VALUES ('4023', 'Aspecto');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4024', 'PH');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4025', 'Glucosa','mg/dL');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4026', 'Proteinas Totales', 'g/dL');
-INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4027', 'Cloro','mmol/L');
+INSERT INTO contents (`content_id`, `content_name`) VALUES ('4027', 'Cloro');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4028', 'Celularidad','cel/mL');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4030', 'Muestra 1 Citología De Moco Nasal - Fosa Nasal Derecha - Linfocitos','%');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4031', 'Muestra 1 Citología De Moco Nasal - Fosa Nasal Derecha - Monocitos','%');
