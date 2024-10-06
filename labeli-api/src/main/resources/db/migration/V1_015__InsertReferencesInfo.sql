@@ -22,7 +22,7 @@ INSERT INTO reference (`idreferences`, `content_id`,`v_ref_text`) VALUES ('1021'
 INSERT INTO reference (`idreferences`, `content_id`, `v_max`, `v_min`) VALUES ('1022', '4024','8.0','5.0');
 INSERT INTO reference (`idreferences`, `content_id`, `v_max`, `v_min`) VALUES ('1023', '4025','92','52');
 INSERT INTO reference (`idreferences`, `content_id`, `v_max`, `v_min`) VALUES ('1024', '4026','3.0','0');
-INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`,`v_max`, `v_min`) VALUES ('1025', '4027','mmol/L','105','93');
+INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1025', '4027');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`)VALUES ('1026','4028','MENOS DE 300/ML');
 INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1027', '4030');
 INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1028', '4031');
