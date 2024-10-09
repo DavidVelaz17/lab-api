@@ -7,7 +7,7 @@ INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1006', '4008');
 INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1007', '4009');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('1008', '4010','mmol/L','105.0','93.0');
 INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1009', '4011');
-INSERT INTO reference (`idreferences`, `content_id`,`v_ref_text`,) VALUES ('1010', '4012','5 por campo');
+INSERT INTO reference (`idreferences`, `content_id`,`v_ref_text`) VALUES ('1010', '4012','5 por campo');
 INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1011', '4013');
 INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1012', '4014');
 INSERT INTO reference (`idreferences`, `content_id`) VALUES ('1013', '4015');
