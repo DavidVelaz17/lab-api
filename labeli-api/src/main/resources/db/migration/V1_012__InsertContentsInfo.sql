@@ -64,7 +64,7 @@ INSERT INTO contents (`content_id`, `content_name`) VALUES ('4068', 'Parasitos')
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4069', 'Amiba en fresco - platina caliente');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4070', 'Levaduras');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4072', 'Mononucleares');
-INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4073', 'Cortison Matutino','nmol/L');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4073', 'Cortisol Matutino','nmol/L');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4074', 'Cortisol Vespertino','nmol/L');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4075', 'CPK','U/L');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4076', 'Creatin Fosfo Cinasa Total - MB-CK-MB','U/L');
