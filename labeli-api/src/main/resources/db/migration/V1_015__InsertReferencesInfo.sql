@@ -237,8 +237,8 @@ INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_m
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('2066', '5072','Mujeres con menstruación normal: Fase filicular', '251', '21');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('2067', '5072','Mujeres con menstruación normal: Fase mitad de ciclo', '649', '38');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('2068', '5072','Mujeres con menstruación normal: Fase luteinica', '312', '21');
-INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('2069', '5072','Mujeres posmenopáusicas no sometidas a terapia de reemplazo hormonal (TRH) <', '28', '10');
-INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('2070', '5072','Mujeres posmenopáusicas sometidas a terapia de reemplazo hormonal (TRH) <', '144', '10');
+INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('2069', '5072','Mujeres posmenopáusicas no sometidas a terapia de reemplazo hormonal (TRH)', '28', '10');
+INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('2070', '5072','Mujeres posmenopáusicas sometidas a terapia de reemplazo hormonal (TRH)', '144', '10');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('2071', '5075','Hombres', '19.40', '3.46');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('2072', '5075','Mujeres', '26.53', '5.18');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`, `v_min`) VALUES ('2073', '5076','Hombres <', '0.2', '0.1');
