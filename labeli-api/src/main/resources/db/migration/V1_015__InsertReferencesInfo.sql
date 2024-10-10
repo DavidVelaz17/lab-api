@@ -274,10 +274,10 @@ INSERT INTO reference (`idreferences`, `content_id`, `v_max`, `v_min`) VALUES ('
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`, `v_max`) VALUES ('3013', '6012', 'Hasta', '1');
 INSERT INTO reference (`idreferences`, `content_id`, `v_max`, `v_min`) VALUES ('3014', '6015', '414', '207');
 INSERT INTO reference (`idreferences`, `content_id`, `v_max`, `v_min`) VALUES ('3015', '6023', '45', '15');
-INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`) VALUES ('3016', '6024', 'Mujeres de 1.1 - 0.6');
-INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`) VALUES ('3017', '6024', 'Hombres de 1.4 - 0.7');
-INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`) VALUES ('3018', '6025', 'Mujeres de 6.0 - 2.6');
-INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`) VALUES ('3019', '6025', 'Hombres de 7.2 - 3.5');
+INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`) VALUES ('3016', '6024', 'Mujeres de 0.6 - 1.1');
+INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`) VALUES ('3017', '6024', 'Hombres de 0.7 - 1.4');
+INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`) VALUES ('3018', '6025', 'Mujeres de 2.6 - 6.0');
+INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`) VALUES ('3019', '6025', 'Hombres de 3.5 - 7.2');
 INSERT INTO reference (`idreferences`, `content_id`, `v_max`, `v_min`) VALUES ('3020', '6026', '5.0', '0');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`) VALUES ('3021', '6027', 'NEGATIVO');
 INSERT INTO reference (`idreferences`, `content_id`, `v_ref_text`) VALUES ('3022', '6028', 'NEGATIVO');
