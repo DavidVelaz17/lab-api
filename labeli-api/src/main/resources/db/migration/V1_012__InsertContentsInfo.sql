@@ -6,8 +6,8 @@ INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('400
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4009', 'Efecto Estrogenico', '-');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4010', 'Efecto Progestacional', '-');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4011', 'Flora Bacteriana');
-INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4012', 'Leucocitos','k/uL');
-INSERT INTO contents (`content_id`, `content_name`) VALUES ('4013', 'Eritrocitos');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4012', 'Leucocitos','Cel/Campo');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4013', 'Eritrocitos','Erit/Campo');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4014', 'Agentes infectantes');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4015', 'Otros Elementos');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4016', 'Celulas del Epitelio Ectocervical y Vaginal');
@@ -64,10 +64,10 @@ INSERT INTO contents (`content_id`, `content_name`) VALUES ('4068', 'Parasitos')
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4069', 'Amiba en fresco - platina caliente');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4070', 'Levaduras');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4072', 'Mononucleares');
-INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4073', 'Cortison Matutino','nmol/L');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4073', 'Cortisol Matutino','nmol/L');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4074', 'Cortisol Vespertino','nmol/L');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4075', 'CPK','U/L');
-INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4076', 'Creatin Fosfo Cinasa Total - CPK','U/L');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4076', 'Creatin Fosfo Cinasa Total - MB-CK-MB','U/L');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4077', 'Creatin Fosfo Cinasa Total - CPK','U/L');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4079', 'Glucosa 1 (en ayuno)','mg/dL');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4080', 'Glucosa 2 (a la hora)','mg/dL');
@@ -109,7 +109,7 @@ INSERT INTO contents (`content_id`, `content_name`) VALUES ('4128', 'Microalbumi
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4129', 'Cetonas');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4130', 'Bilirrubinas');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4131', 'Nitritos');
-INSERT INTO contents (`content_id`, `content_name`) VALUES ('4132', 'Urobilinógeno');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4132', 'Urobilinógeno','mg/dL');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4133', 'Sangre');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4134', 'Células Del Epitelio Escamoso (uretra, vagina)');
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('4135', 'Células Del Epitelio Renal (tubulo renal)');
@@ -164,6 +164,9 @@ INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('417
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4177', 'Muestra 3 Citologia de Moco Nasal- Fosa Nasal Izquierda - EOSINOFILOS','%');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4178', 'Muestra 3 Citologia de Moco Nasal- Fosa Nasal Izquierda - LINFOCITOS','%');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4179', 'Muestra 3 Citologia de Moco Nasal- Fosa Nasal Izquierda - MONOCITOS','%');
+
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4180', 'Linfocitos','%');
+INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('4181', 'Monocitos','%');
 
 INSERT INTO contents (`content_id`, `content_name`) VALUES ('5022', 'Factor Reumatoide');
 INSERT INTO contents (`content_id`, `content_name`,`content_units`) VALUES ('5023', 'Ferritina','ng/mL');

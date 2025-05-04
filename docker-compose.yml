@@ -1,0 +1,29 @@
+version: '1'
+
+services:
+  lab_api:
+    build: .
+    mem_limit: 512m
+    ports:
+      - "8081:8081"
+    environment:
+      DB_URL: jdbc:mysql://laboratory_build_bd:3306/laboratory?createDatabaseIfNotExist=true&serverTimezone=UTC
+      USER_NAME: root
+      PASSWORD: 1234
+    restart: always
+    depends_on:
+      laboratory_build_bd:
+          condition: service_healthy
+  laboratory_build_bd:
+    image: mysql:8.0.33 
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: laboratory
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 10
