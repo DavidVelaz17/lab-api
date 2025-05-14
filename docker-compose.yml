@@ -1,4 +1,4 @@
-version: '1'
+version: '2.1'
 
 services:
   lab_api:
@@ -13,9 +13,9 @@ services:
     restart: always
     depends_on:
       laboratory_build_bd:
-          condition: service_healthy
+        condition: service_healthy
   laboratory_build_bd:
-    image: mysql:8.0.33 
+    image: mysql:8.0.33
     ports:
       - "3306:3306"
     environment:
@@ -27,3 +27,8 @@ services:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 10s
       retries: 10
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
